@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "../style/saleStyle.css";
-
+import AddToCart from "./AddToCart";
 export class SaleProductItem extends Component {
   render() {
     return (
@@ -9,53 +9,19 @@ export class SaleProductItem extends Component {
           <div className="image-container">
             <img src={this.props.src} alt="pic" />
             <div className="onSale-title">
-              <p> {this.props.sale}</p>
+              <p> On Sale</p>
             </div>
           </div>
 
           <div className="information-container">
             <div className="sale-title">{this.props.title}</div>
             <div className="card-brief-description">
-              Lorem ipsum dolor sit amet consectetur adipisicing
+              {this.props.description}
             </div>
             <div className="sale-price">{this.props.price}</div>
-            <button className="add-to-cart-btn">
-              <div className="btn-icon">
-                <i className="fa-solid fa-cart-arrow-down"></i>
-              </div>
-              <div className="btn-text"> Add to Cart</div>
-            </button>
+            <AddToCart itemId={this.props.id} />
           </div>
         </div>
-        {/* <div classNameName="mainContainer">
-          <img src={this.props.src} alt="pic" />
-          <div classNameName="titleMostViewed"> {this.props.title}</div>
-          <div classNameName="priceMostViewed"> {this.props.price}</div>
-        </div> */}
-        {/* jjjjjjjjjj */}
-        {/*       <div>
-        <div className="sale-card">
-          <div className="image-container">
-            <img src={this.props.src} alt="pic" />
-          </div>
-          <div className="information-container">
-            <div className="sale-title">{this.props.title}</div>
-            <div className="card-brief-description">
-              Lorem ipsum dolor sit amet consectetur adipisicing
-            </div>
-            <div className="sale-price">{this.props.price}</div>
-            <div
-              className="add-to-cart-btn"
-              itemId={this.props.key}
-              onClick={this.onClickHandler}
-            >
-              <div className="btn-icon">
-                <i className="fa-solid fa-cart-arrow-down"></i>
-              </div>
-              <div className="btn-text"> Add to Cart</div>
-            </div>
-          </div>
-        </div> */}
       </div>
     );
   }
