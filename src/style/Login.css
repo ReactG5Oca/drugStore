@@ -1,0 +1,102 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+:root {
+    --gray: #333333;
+    --grayBlue: #25272e;
+    --darkBlue: #2c3e50;
+    --skyBlue: #00aeef;
+    --white: #ffffff;
+}
+.login{
+    background-color:var(--darkBlue) ;
+    height: 100vh;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+.form-container{
+    display: flex;
+    flex-direction: column;
+    height: 70%;
+    width: 30%;
+    padding: 1em;
+    border-radius: 20px;
+    background-color: white;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    /* box-shadow: 2px 4px 18px 2px wheat; */
+}
+input{
+height: 4.5em;
+width: 23em;
+background-color: rgb(235, 232, 232);
+border: 0px;
+box-shadow: 1px 3px 6px 1px rgb(192, 192, 192);
+border-radius: 10px;
+align-items: center;
+text-align: center;
+}
+button{
+    height: 3.8em;
+    width: 23em;
+    border-radius: 10px;
+    background-color: var(--skyBlue);
+    border-color: var(--skyBlue);
+    
+}
+
+@media only screen and (max-width: 1240px) and (min-width: 780px) {
+    .form-container{
+        height: 70%;
+        width: 40%;
+        padding: 0.5em;
+    }
+    input{
+    height: 4em;
+    width: 70%;
+    }
+    button{
+        height: 3.8em;
+        width: 70%;
+       
+    }
+}
+@media only screen and (max-width: 780px) and (min-width: 500px) {
+    .form-container{
+        height: 60%;
+        width: 60%;
+        
+    }
+    input{
+    height: 3em;
+    width: 80%;
+    }
+    button{
+        height: 3em;
+        width: 80%;
+       
+        
+    }
+}
+@media only screen and (max-width: 500px){
+    .form-container{
+        height: 60%;
+        width: 100%;
+        
+    }
+    input{
+    height: 3em;
+    width: 80%;
+    }
+    button{
+        height: 3em;
+        width: 80%;
+       
+        
+    }
+}
