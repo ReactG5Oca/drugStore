@@ -17,7 +17,7 @@ export class HeroImage extends Component {
 
   componentDidMount() {
     setInterval(() => {
-      if(this.state.imgArrCounter==this.state.arrayOfImages.length-1){
+      if(this.state.imgArrCounter===this.state.arrayOfImages.length-1){
         this.setState({
           imgArrCounter:0
         })

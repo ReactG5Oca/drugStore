@@ -1,0 +1,20 @@
+.CheckoutPageContainer{
+    margin: 3% auto;
+    text-align: center;
+}
+.CheckoutPageContainer .CheckoutPageTitle{
+    font-weight: 900;
+}
+.choosenIemsContainer .checkoutBtn{
+    border: none;
+    background-color: var(--darkBlue);
+    padding: 10px 20px;
+    border-radius: 25px;
+    color: var(--white);
+    font-weight: 800;
+}
+.choosenIemsContainer .checkoutBtn:hover{
+    background-color: var(--skyBlue);
+    
+}
+
