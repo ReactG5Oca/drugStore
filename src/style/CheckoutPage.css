@@ -13,6 +13,10 @@
     color: var(--white);
     font-weight: 800;
 }
+.choosenIemsContainer .checkoutBtn a{
+    text-decoration: none;
+    color: unset;
+}
 .choosenIemsContainer .checkoutBtn:hover{
     background-color: var(--skyBlue);
     

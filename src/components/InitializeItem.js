@@ -47,7 +47,7 @@ export class InitializeItem extends Component {
         id: "5",
         src: "../assets/images/omega3.jpg",
         onSale: false,
-        Name: "haneen1",
+        name: "haneen1",
         description: "Lorem ipsum dolor sit amet consectetur adipisicingl",
         price: "20",
       },

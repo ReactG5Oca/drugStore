@@ -1,23 +1,20 @@
 import React, { Component } from "react";
 import Card from "./Card";
-import '../style/Products.css';
+import "../style/Products.css";
 
-class Products extends Component{
-   
+class Products extends Component {
+  render() {
+    const Supplements = localStorage.getItem("itemVariables")
+      ? JSON.parse(localStorage.getItem("itemVariables"))
+      : [];
 
-    render(){
-
-        const Supplements = localStorage.getItem("itemVariables")
-        ? JSON.parse(localStorage.getItem("itemVariables"))
-        : [];
-
-        return(
-            <>
-            <div className="Productsh1">
-            <h1>Products</h1>
-            </div>
-            <div className="Products">
-            {Supplements.filter((sup) => sup.onSale === false).map(
+    return (
+      <>
+        <div className="Productsh1">
+          <h1>Products</h1>
+        </div>
+        <div className="Products">
+          {Supplements.filter((sup) => sup.onSale === false).map(
             (item, index) => {
               return (
                 <Card
@@ -30,12 +27,10 @@ class Products extends Component{
                 />
               );
             }
-          )} 
-            </div>
-           </>
-            
-        )
-    }
-
+          )}
+        </div>
+      </>
+    );
+  }
 }
 export default Products;

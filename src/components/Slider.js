@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "../style/Slider.css";
+import { Link } from "react-router-dom";
 
 export class HeroImage extends Component {
   constructor(props) {
@@ -57,7 +58,7 @@ export class HeroImage extends Component {
       >
         <div className="buttonsArea">
           <p> Welcome to Capsule drug stores</p>
-          <button className="shopNowBtn">Shop now</button>
+          <button className="shopNowBtn"><Link to="/store">Shop now</Link> </button>
           <div className="toggeleSlider">
             <button className="toggle1"onClick={this.handleToggleClick}></button>
             <button className="toggle2" onClick={this.handleToggleClick}></button>

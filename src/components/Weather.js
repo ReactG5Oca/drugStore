@@ -21,7 +21,7 @@ class Weather extends Component{
 getWeather  =async ()=>{
     const response = await fetch("https://api.openweathermap.org/data/2.5/weather?q=Jordan&units=metric&appid=ff0d4cb052ce451d0aa511db81b7d622");
     const data = await response.json();
-    console.log(data);
+    // console.log(data);
 
     this.setState({
         City:data.name,
@@ -37,9 +37,9 @@ getWeather  =async ()=>{
             <div className="Weather">
                 <h1>The Weather</h1>
                 <div className="WeatherIcon">
-                <p><i class="fas fa-city"></i>{this.state.City}</p>
-                <p><i class="fas fa-thermometer-three-quarters"></i>Temperature {this.state.Celsius}°</p>
-                <p><i class="fas fa-cloud"></i>{this.state.Description}</p>
+                <p><i className="fas fa-city"></i>{this.state.City}</p>
+                <p><i className="fas fa-thermometer-three-quarters"></i>Temperature {this.state.Celsius}°</p>
+                <p><i className="fas fa-cloud"></i>{this.state.Description}</p>
                 </div>
             </div>
            

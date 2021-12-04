@@ -13,7 +13,7 @@ export class SaleProduct extends Component {
       ? JSON.parse(localStorage.getItem("itemVariables"))
       : [];
     return (
-      <div>
+      <div className="salesProductContainer">
         {/* <InitializeItem /> */}
         <h2 className="titleOfSupplements"> Special Offers</h2>
         <div className="main-container">

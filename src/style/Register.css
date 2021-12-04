@@ -1,102 +1,80 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
+.register {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-:root {
-    --gray: #333333;
-    --grayBlue: #25272e;
-    --darkBlue: #2c3e50;
-    --skyBlue: #00aeef;
-    --white: #ffffff;
+.form-container {
+  display: flex;
+  flex-direction: column;
+  height: 78%;
+  width: 30%;
+  padding: 1em;
+  border-radius: 20px;
+  background-color: white;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  box-shadow: 0 0 5px 2px #6c757d8a;
 }
-.register{
-    background-color:var(--darkBlue) ;
-    height: 100vh;
-   display: flex;
-   justify-content: center;
-   align-items: center;
+div.register > form >input {
+  height: 4.5em;
+  width: 23em;
+  background-color: rgb(235, 232, 232);
+  border: 0px;
+  box-shadow: 1px 3px 6px 1px rgb(192, 192, 192);
+  border-radius: 10px;
+  align-items: center;
+  text-align: center;
 }
-.form-container{
-    display: flex;
-    flex-direction: column;
-    height: 78%;
-    width: 30%;
-    padding: 1em;
-    border-radius: 20px;
-    background-color: white;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    /* box-shadow: 2px 4px 18px 2px wheat; */
-}
-input{
-height: 4.5em;
-width: 23em;
-background-color: rgb(235, 232, 232);
-border: 0px;
-box-shadow: 1px 3px 6px 1px rgb(192, 192, 192);
-border-radius: 10px;
-align-items: center;
-text-align: center;
-}
-button{
-    height: 3.8em;
-    width: 23em;
-    border-radius: 10px;
-    background-color: var(--skyBlue);
-    border-color: var(--skyBlue);
-    
+div.register > form > button {
+  height: 3.8em;
+  width: 23em;
+  border-radius: 10px;
+  background-color: var(--skyBlue);
+  border-color: var(--skyBlue);
 }
 
 @media only screen and (max-width: 1240px) and (min-width: 780px) {
-    .form-container{
-        height: 70%;
-        width: 40%;
-        padding: 0.5em;
-    }
-    input{
+  .form-container {
+    height: 70%;
+    width: 40%;
+    padding: 0.5em;
+  }
+  div.register > form >input {
     height: 4em;
     width: 70%;
-    }
-    button{
-        height: 3.8em;
-        width: 70%;
-       
-    }
+  }
+  div.register > form > button {
+    height: 3.8em;
+    width: 70%;
+  }
 }
 @media only screen and (max-width: 780px) and (min-width: 500px) {
-    .form-container{
-        height: 60%;
-        width: 60%;
-        
-    }
-    input{
+  .form-container {
+    height: 60%;
+    width: 60%;
+  }
+  div.register > form >input {
     height: 3em;
     width: 80%;
-    }
-    button{
-        height: 3em;
-        width: 80%;
-       
-        
-    }
+  }
+  div.register > form > button {
+    height: 3em;
+    width: 80%;
+  }
 }
-@media only screen and (max-width: 500px){
-    .form-container{
-        height: 60%;
-        width: 100%;
-        
-    }
-    input{
+@media only screen and (max-width: 500px) {
+  .form-container {
+    height: 60%;
+    width: 100%;
+  }
+  div.register > form >input {
     height: 3em;
     width: 80%;
-    }
-    button{
-        height: 3em;
-        width: 80%;
-       
-        
-    }
+  }
+  div.register > form > button {
+    height: 3em;
+    width: 80%;
+  }
 }

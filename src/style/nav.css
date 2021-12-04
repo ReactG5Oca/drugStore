@@ -28,6 +28,7 @@
 }
 .Nav.itemList{
     display: inline;
+    cursor: pointer;
 }
 .Nav.itemList:hover{
     transform: scale(1.1);
@@ -52,6 +53,10 @@
 }
 .menu{
     display: none;
+}
+.Nav.navContainer ul li a{
+    color: unset;
+    text-decoration: none;
 }
 @media screen and (max-width:800px) {
 .Nav.navContainer{

@@ -1,8 +1,10 @@
 import React, { Component } from "react";
 import "../style/CheckoutPage.css";
 import ChoosenItem from "./ChoosenItem";
+import { Link } from "react-router-dom";
 
-export class CheckoutPage extends Component {
+
+export class CartComponent extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -84,10 +86,16 @@ export class CheckoutPage extends Component {
       totalItemsPrice: sum,
     });
   };
-  saveCartToStorage=()=>{
-    console.log("yaser");
-    localStorage.setItem("cartData",JSON.stringify([...this.state.arrayOfChoosenItems,this.state.totalItemsPrice]))
-  }
+  saveCartToStorage = () => {
+    // console.log("yaser");
+    localStorage.setItem(
+      "cartData",
+      JSON.stringify([
+        ...this.state.arrayOfChoosenItems,
+        this.state.totalItemsPrice,
+      ])
+    );
+  };
   render() {
     return (
       <div className="CheckoutPageContainer">
@@ -111,7 +119,9 @@ export class CheckoutPage extends Component {
               <h4 className="totalPriceResulth4">
                 Total Price : {this.state.totalItemsPrice} Jd
               </h4>
-              <button className="checkoutBtn" onClick={this.saveCartToStorage}>Checkout</button>
+              <button className="checkoutBtn" onClick={this.saveCartToStorage}>
+              <Link to="/checkout"> Checkout</Link>
+              </button>
             </>
           ) : (
             <div className="emptyCartContainer">
@@ -119,7 +129,9 @@ export class CheckoutPage extends Component {
                 src="https://professionalscareer.com/assets/images/emptycart.png"
                 alt="empty cart"
               />
-              <button className="addItemBtn">Add Item</button>
+              <button className="addItemBtn">
+                <Link to="/store"> Add Item</Link>
+              </button>
             </div>
           )}
         </div>
@@ -128,4 +140,4 @@ export class CheckoutPage extends Component {
   }
 }
 
-export default CheckoutPage;
+export default CartComponent;
