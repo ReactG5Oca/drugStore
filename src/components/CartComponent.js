@@ -85,6 +85,7 @@ export class CartComponent extends Component {
     this.setState({
       totalItemsPrice: sum,
     });
+    this.saveCartToStorage()
   };
   saveCartToStorage = () => {
     // console.log("yaser");
