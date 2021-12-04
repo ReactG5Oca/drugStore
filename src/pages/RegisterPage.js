@@ -1,11 +1,11 @@
 import React, { Component } from "react";
-import Register from "../components/Register";
+import NewRegister from "../components/Register";
 
 export class RegisterPage extends Component {
   render() {
     return (
       <>
-        <Register />
+        <NewRegister />
       </>
     );
   }

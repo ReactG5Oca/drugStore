@@ -1,111 +1,87 @@
-import React, { Component } from "react";
+import React, { Component, useEffect } from "react";
 import "../style/Register.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
+export default function NewRegister() {
+  const navigate = useNavigate();
+  // useEffect(() => {
+  //   if (true) {
+  //     navigate("/login");
+  //   }
+  // }, []);
+  const handleUserRegister = () => {
+    navigate("/login");
+  };
+  return <Register handleUserRegister={handleUserRegister} />;
+}
 class Register extends Component {
   constructor() {
     super();
     this.state = {
-      username: "",
-      confirmpass: "",
-      email: "",
-      password: "",
-      arr: JSON.parse(localStorage.getItem("users"))
-        ? JSON.parse(localStorage.getItem("users"))
-        : [],
+      arr: [],
       mssgname: "",
       mssgpas: "",
       mssglength: "",
+      mssgEmail: "",
     };
   }
+  componentDidMount() {
+    if (JSON.parse(localStorage.getItem("users"))) {
+      this.setState({ arr: JSON.parse(localStorage.getItem("users")) });
+    } else {
+      localStorage.setItem("users", JSON.stringify(this.state.arr));
+    }
+  }
   check = async (e) => {
-    const { username, confirmpass, email, password } = this.state;
     e.preventDefault();
-    await this.setState({
-      username: e.target.name.value,
-      confirmpass: e.target.confirmpass.value,
-      email: e.target.email.value,
-      password: e.target.password.value,
-    });
-
-    this.validation(e);
-  };
-  validation = (e) => {
     let input1 = e.target.name.value;
     let input2 = e.target.email.value;
     let input3 = e.target.password.value;
     let input4 = e.target.confirmpass.value;
-    let user = this.state.arr.username;
-    let em = this.state.arr.email;
-    const { username, confirmpass, email, password } = this.state;
-
-    if (input3 === input4 && input1.length >= 5 && input3.length > 5) {
-      this.state.arr.forEach((element) => {
-        if (input1 != user && input2 != em) {
-          let obj = { username, email, password, confirmpass };
-          this.state.arr.push(obj);
-          localStorage.setItem("users", JSON.stringify(this.state.arr));
-        } else {
-          alert("you are already signed in before");
-        }
-      });
-
+    this.setState({
+      mssgname: "",
+      mssgpas: "",
+      mssglength: "",
+      mssgEmail: "",
+    });
+    let enableRegister = 0;
+    if (input1.length <= 5) {
       this.setState({
-        mssgname: "",
-        mssgpas: "",
-        mssglength: "",
+        mssgname: "should be more than 5 characters",
       });
-    } else if (input1.length < 5) {
-      this.setState({
-        mssgname: "your name is less than 5",
-      });
-      if (input3.length <= 5) {
-        this.setState({
-          mssglength: "your password is too short",
-        });
-      }
-      if (input3 != input4) {
-        this.setState({
-          mssgpas: "your password doesnt match",
-        });
-      }
-    } else if (input3.length <= 5) {
+      enableRegister += 1;
+    }
+    if (input3.length <= 5) {
       this.setState({
         mssglength: "your password is too short",
       });
-      if (input1.length > 5) {
-        this.setState({
-          mssgname: "",
-        });
-      }
-    } else if (input3 != input4) {
+      enableRegister += 1;
+    }
+    if (input3 != input4) {
       this.setState({
-        mssgpas: "your password doesnt match",
+        mssgpas: "your passwords doesn't match",
       });
-      if (input1.length > 5) {
+      enableRegister += 1;
+    }
+    this.state.arr.forEach((data) => {
+      if (data.email === input2) {
         this.setState({
-          mssgname: "",
+          mssgEmail: "this email registered before",
         });
+        enableRegister += 1;
       }
-      if (input3.length > 5) {
-        this.setState({
-          mssglength: "",
-        });
-      }
-    } else if (input3 == input4) {
-      this.setState({
-        mssgpas: "",
+    });
+    if (enableRegister === 0) {
+      console.log("you can register now");
+      let newArr = this.state.arr;
+      newArr.push({
+        username: input1,
+        email: input2,
+        password: input3,
+        userCartItems: [],
       });
-      if (input1.length > 5) {
-        this.setState({
-          mssgname: "",
-        });
-      }
-      if (input3.length > 5) {
-        this.setState({
-          mssglength: "",
-        });
-      }
+      localStorage.setItem("users", JSON.stringify(newArr));
+      this.props.handleUserRegister();
     }
   };
 
@@ -119,6 +95,7 @@ class Register extends Component {
           <h6 style={{ color: "red" }}>{this.state.mssgname}</h6>
           <br />
           <input type="email" placeholder="Email" name="email" required />
+          <h6 style={{ color: "red" }}>{this.state.mssgEmail}</h6>
           <br />
 
           <input type="text" placeholder="Password" name="password" required />
@@ -145,4 +122,4 @@ class Register extends Component {
   }
 }
 
-export default Register;
+// export default Register;

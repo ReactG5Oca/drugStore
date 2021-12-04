@@ -1,14 +1,14 @@
-import React, { Component } from 'react'
-import Login from '../components/Login'
+import React, { Component } from "react";
+import LoginHoc from "../components/Login";
 
 export class LoginPage extends Component {
-    render() {
-        return (
-            <>
-             <Login/>   
-            </>
-        )
-    }
+  render() {
+    return (
+      <>
+        <LoginHoc />
+      </>
+    );
+  }
 }
 
-export default LoginPage
+export default LoginPage;

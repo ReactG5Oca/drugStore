@@ -1,42 +1,79 @@
 import React, { Component } from "react";
 import "../style/Login.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+export default function LoginHoc() {
+  const navigate = useNavigate();
+  const handleLoginSubmitRedirect = (haveEmptyCart) => {
+    if (haveEmptyCart === "yes") {
+      navigate("/");
+    } else {
+      navigate("/checkout");
+    }
+  };
+  return <Login handleLoginSubmitRedirect={handleLoginSubmitRedirect} />;
+}
 
 class Login extends Component {
   constructor() {
     super();
     this.state = {
-      username: "",
+      userEmail: "",
       password: "",
-      validuser: "",
+      usersStorageArr: [],
+      errorMessage: "",
     };
   }
+  componentDidMount() {
+    JSON.parse(localStorage.getItem("users"))
+      ? this.setState({
+          usersStorageArr: JSON.parse(localStorage.getItem("users")),
+        })
+      : localStorage.setItem(
+          "users",
+          JSON.stringify(this.state.usersStorageArr)
+        );
+  }
 
-  loginsubmit = async (e) => {
+  loginsubmit = (e) => {
     e.preventDefault();
-    await this.setState({
-      username: e.target.name.value,
-      password: e.target.password.value,
+    this.setState({
+      errorMessage: "",
     });
-
-    let allobj = JSON.parse(localStorage.getItem("users"));
-
-    allobj.forEach((element) => {
+    let userInputEmail = e.target.userEmail.value;
+    let userInputPassword = e.target.password.value;
+    let storageUsername = "";
+    let storageUserCart = [];
+    let isAuthenticated = false;
+    this.state.usersStorageArr.forEach((data) => {
       if (
-        this.state.username === element.username &&
-        this.state.password === element.password
+        userInputEmail === data.email &&
+        userInputPassword === data.password
       ) {
-        // alert('congratulations')
-        let name = element.username;
-        let pass = element.password;
-        let email = element.email;
-        let activeuser = { name, email, pass };
-        localStorage.setItem("active", JSON.stringify(activeuser));
+        storageUsername = data.username;
+        storageUserCart = data.userCartItems;
+        isAuthenticated = true;
       }
-      // else if(this.state.username!=element.username || this.state.password!=element.password){
-      //     alert('you are not user')
-      // }
     });
+    if (isAuthenticated) {
+      localStorage.setItem(
+        "currentUser",
+        JSON.stringify({
+          email: userInputEmail,
+          username: storageUsername,
+          password: userInputPassword,
+          userCartItems: storageUserCart,
+        })
+      );
+      if (storageUserCart.length > 0) {
+        this.props.handleLoginSubmitRedirect("no");
+      } else {
+        this.props.handleLoginSubmitRedirect("yes");
+      }
+    } else {
+      this.setState({
+        errorMessage: "The username or password incorrect !!",
+      });
+    }
   };
 
   render() {
@@ -44,21 +81,19 @@ class Login extends Component {
       <div className="login">
         <form className="form-container" onSubmit={this.loginsubmit}>
           <h1 style={{ fontFamily: "sans-serif" }}>Sign In</h1>
-
-          <input type="text" placeholder="UserName" name="name" required />
+          <h5 style={{ color: "red" }}>{this.state.errorMessage}</h5>
+          <input type="email" placeholder="Email" name="userEmail" required />
           <br />
-
           <input type="text" placeholder="Password" name="password" required />
           <br />
           <Link to="/register"> You Don't Have An Account ?</Link>
           <button type="submit" style={{ color: "white" }}>
             login
           </button>
-          {/* {this.state.validuser ? <Link to='/posts'></Link> :''} */}
         </form>
       </div>
     );
   }
 }
 
-export default Login;
+// export default Login;
