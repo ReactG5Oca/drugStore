@@ -19,7 +19,9 @@ export class AddToCart extends Component {
       : [];
 
     const cartAddArry = this.props.itemId;
-    cartArray.push(cartAddArry);
+    if (!cartArray.includes(cartAddArry)) {
+      cartArray.push(cartAddArry);
+    }
     localStorage.setItem("cartKey", JSON.stringify(cartArray));
     console.log(cartArray);
     // in case there is already items ID in the local storage. add the ID to the

@@ -5,15 +5,15 @@ export class InitializeItem extends Component {
     const myStore = [
       {
         id: "0",
-        src: "../assets/images/omega3.jpg",
+        src: "../assets/images/aspirin.jpg",
         onSale: false,
-        name: "Panadol",
+        name: "Aspirn",
         description: "Lorem ipsum dolor sit amet consectetur adipisicingl",
         price: "20",
       },
       {
         id: "1",
-        src: "../assets/images/omega3.jpg",
+        src: "../assets/images/advil.jpg",
         onSale: false,
         name: "Panadol",
         description: "Lorem ipsum dolor sit amet consectetur adipisicingl",
@@ -21,7 +21,7 @@ export class InitializeItem extends Component {
       },
       {
         id: "2",
-        src: "../assets/images/omega3.jpg",
+        src: "../assets/images/rennie.jpg",
         onSale: false,
         name: "Panadol",
         description: "Lorem ipsum dolor sit amet consectetur adipisicingl",
