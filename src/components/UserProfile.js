@@ -8,7 +8,7 @@ class UserProfile extends Component {
     this.state = {};
   }
   render() {
-    const users = JSON.parse(localStorage.getItem("users"));
+    const users = JSON.parse(localStorage.getItem("currentUser"));
 
     return (
       <>

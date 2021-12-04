@@ -35,9 +35,10 @@ class FeaturedProducts extends Component {
       ],
     };
 
-    this.Element = this.state.ArrProducts.map(function (element) {
+    this.Element = this.state.ArrProducts.map(function (element,index) {
       return (
         <Card
+        key={index}
           id={element.id}
           src={element.src}
           title={element.name}

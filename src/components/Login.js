@@ -84,7 +84,7 @@ class Login extends Component {
           <h5 style={{ color: "red" }}>{this.state.errorMessage}</h5>
           <input type="email" placeholder="Email" name="userEmail" required />
           <br />
-          <input type="text" placeholder="Password" name="password" required />
+          <input type="password" placeholder="Password" name="password" required />
           <br />
           <Link to="/register"> You Don't Have An Account ?</Link>
           <button type="submit" style={{ color: "white" }}>

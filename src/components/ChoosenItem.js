@@ -6,7 +6,7 @@ export class ChoosenItem extends Component {
       <div className="oneChosenItemContainer">
         <div className="itemName">{this.props.itemName}</div>
         <div className="choosenItemImageContainer">
-          <img src="./assets/images/Screenshot 2021-11-19 181415.png" alt={this.props.itemName} />
+          <img src={this.props.itemImage} alt={this.props.itemName} />
         </div>
         <div className="itemQuantityContainer">
           <button onClick={() => {

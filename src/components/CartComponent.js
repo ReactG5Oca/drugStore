@@ -3,62 +3,78 @@ import "../style/CheckoutPage.css";
 import ChoosenItem from "./ChoosenItem";
 import { Link } from "react-router-dom";
 
-
 export class CartComponent extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      arrayOfChoosenItems: [
-        {
-          itemName: "item1 TEST",
-          itemPrice: 500,
-          itemQuantity: 1,
-          itemImage: "test.png",
-        },
-        {
-          itemName: "item2",
-          itemPrice: 500,
-          itemQuantity: 1,
-          itemImage: "test.png",
-        },
-        {
-          itemName: "item3",
-          itemPrice: 500,
-          itemQuantity: 1,
-          itemImage: "test.png",
-        },
-        {
-          itemName: "item4",
-          itemPrice: 500,
-          itemQuantity: 1,
-          itemImage: "test.png",
-        },
-        {
-          itemName: "item5",
-          itemPrice: 500,
-          itemQuantity: 1,
-          itemImage: "test.png",
-        },
-      ],
+      arrayOfChoosenItems: [],
       totalItemsPrice: 0,
+      arrayOfKeys: [],
     };
   }
-  componentDidMount() {
-    this.calculateTotalPrice();
+  async componentDidMount() {
+    if (
+      localStorage.getItem("cartKey") &&
+      localStorage.getItem("itemVariables")
+    ) {
+      let arrayOfKeys = JSON.parse(localStorage.getItem("cartKey"));
+      await this.setState({
+        arrayOfKeys: arrayOfKeys,
+      });
+      let allStorageProduct = JSON.parse(localStorage.getItem("itemVariables"));
+      // console.log(
+      //   arrayOfKeys,allStorageProduct
+      // )
+      const counts = {};
+      arrayOfKeys.forEach(function (x) {
+        counts[x] = (counts[x] || 0) + 1;
+      });
+      // console.log(counts)
+      // --------------------------------------
+      let ArrayOfNewDataObjects = [];
+      allStorageProduct.forEach((item, index) => {
+        if (counts.hasOwnProperty(index)) {
+          item.itemQuantity = Number(counts[index]);
+          ArrayOfNewDataObjects.push(item);
+        }
+      });
+      console.log(ArrayOfNewDataObjects);
+      // -------------------------------------
+      await this.setState({
+        arrayOfChoosenItems: ArrayOfNewDataObjects,
+      });
+      console.log(this.state.arrayOfChoosenItems);
+      localStorage.setItem("cartData", JSON.stringify(ArrayOfNewDataObjects));
+      // -------------------------------------
+      this.calculateTotalPrice();
+      // -------------------------------------
+    }
   }
-  handleIncreaseQuantity = (index) => {
+  handleIncreaseQuantity = async (index) => {
     let prevObj = this.state.arrayOfChoosenItems[index];
     if (prevObj.itemQuantity <= 8) {
+      let arrayOfKeys = this.state.arrayOfKeys;
+      arrayOfKeys.push(`${index}`);
+      await this.setState({
+        arrayOfKeys: arrayOfKeys,
+      });
+      localStorage.setItem("cartKey", JSON.stringify(arrayOfKeys));
       prevObj.itemQuantity += 1;
       let prevArr = this.state.arrayOfChoosenItems;
       prevArr.splice(index, 1, prevObj);
-      this.setState({
+      await this.setState({
         arrayOfChoosenItems: prevArr,
       });
       this.calculateTotalPrice();
     }
   };
-  handleDecreaseQuantity = (index) => {
+  handleDecreaseQuantity = async (index) => {
+    // let arrayOfKeys = this.state.arrayOfKeys;
+    // arrayOfKeys.splice(arrayOfKeys.indexOf(index), 1);
+    // await this.setState({
+    //   arrayOfKeys: arrayOfKeys,
+    // });
+    // localStorage.setItem("cartKey", JSON.stringify(arrayOfKeys));
     let prevObj = this.state.arrayOfChoosenItems[index];
     if (prevObj.itemQuantity >= 2) {
       prevObj.itemQuantity -= 1;
@@ -74,21 +90,21 @@ export class CartComponent extends Component {
       this.setState({
         arrayOfChoosenItems: prevArr,
       });
+      localStorage.setItem("cartData", JSON.stringify(prevArr));
       this.calculateTotalPrice();
     }
   };
-  calculateTotalPrice = () => {
+  calculateTotalPrice = async () => {
     let sum = 0;
     this.state.arrayOfChoosenItems.forEach(
-      (data) => (sum += data.itemPrice * data.itemQuantity)
+      (data) => (sum += data.price * data.itemQuantity)
     );
-    this.setState({
+    await this.setState({
       totalItemsPrice: sum,
     });
-    this.saveCartToStorage()
+    this.saveCartToStorage();
   };
   saveCartToStorage = () => {
-    // console.log("yaser");
     localStorage.setItem(
       "cartData",
       JSON.stringify([
@@ -108,11 +124,11 @@ export class CartComponent extends Component {
                 <ChoosenItem
                   key={index}
                   itemIndex={index}
-                  itemName={data.itemName}
-                  itemPrice={data.itemPrice}
+                  itemName={data.name}
+                  itemPrice={data.price}
                   itemQuantity={data.itemQuantity}
-                  itemImage={data.itemImage}
-                  itemPriceQuantity={data.itemPrice * data.itemQuantity}
+                  itemImage={data.src}
+                  itemPriceQuantity={data.price * data.itemQuantity}
                   handleIncreaseQuantity={this.handleIncreaseQuantity}
                   handleDecreaseQuantity={this.handleDecreaseQuantity}
                 />
@@ -121,7 +137,7 @@ export class CartComponent extends Component {
                 Total Price : {this.state.totalItemsPrice} Jd
               </h4>
               <button className="checkoutBtn" onClick={this.saveCartToStorage}>
-              <Link to="/checkout"> Checkout</Link>
+                <Link to="/checkout"> Checkout</Link>
               </button>
             </>
           ) : (

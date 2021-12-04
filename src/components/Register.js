@@ -98,7 +98,7 @@ class Register extends Component {
           <h6 style={{ color: "red" }}>{this.state.mssgEmail}</h6>
           <br />
 
-          <input type="text" placeholder="Password" name="password" required />
+          <input type="password" placeholder="Password" name="password" required />
           <h6 style={{ color: "red" }}>{this.state.mssglength}</h6>
           <br />
 
