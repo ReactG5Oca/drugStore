@@ -1,0 +1,100 @@
+.Nav.navContainer{
+    display: flex;
+    justify-content: space-around;
+    background-color:var(--white);
+    box-shadow:1px 1px 12px #333333; 
+    padding: 0.5em 1.5em;  
+}
+.Nav.logoContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.Nav.navLogo{
+    width: 50px;
+}
+.Nav.logoName{
+    display: block;
+    color: var(--darkBlue);
+    text-align: left;
+}
+.Nav.navList{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    list-style: none;
+    width: 60%;
+    margin: 0;
+}
+.Nav.itemList{
+    display: inline;
+}
+.Nav.itemList:hover{
+    transform: scale(1.1);
+    transition-duration: 0.5ms;
+}
+.Nav.btns{
+    display: flex;
+    justify-content: right;
+    align-items: flex-end;
+}
+.Nav.btn{
+    background-color: var(--darkBlue);
+    color: var(--white);
+    border-radius: 2em;
+    border: black 0.5px solid;
+    margin-left: 1em;
+}
+.Nav.btn:hover{
+    transform: scale(1.03);
+    transition-duration: 0.8s;
+    background-color: var(--grayBlue);
+}
+.menu{
+    display: none;
+}
+@media screen and (max-width:800px) {
+.Nav.navContainer{
+    display: block;
+}
+.Nav.logoContainer{
+    display: inline;
+}
+    .menu{
+     display: inline;
+     height: 30px;
+     margin: 1.5% 0;
+     position: absolute;
+     right: 5%;
+
+    }
+.Nav.navList{
+    display: none;
+}
+.toggle.navList{
+    display: block;
+    
+}
+.Nav.itemList{
+    display: none;
+}
+.toggle.itemList{
+    display: block;
+    text-align: center;
+} 
+.toggle.itemList:hover{
+    transform: scale(1.1);
+    transition-duration: 0.5ms;
+    background: var(--darkBlue);
+    color: var(--white);
+}
+.Nav.btns{
+    display: none;
+}
+.toggle.btns{
+    display: block;
+} 
+.Nav.btn{
+    margin: 0.5em 0 0;
+}
+}

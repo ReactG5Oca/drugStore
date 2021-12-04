@@ -1,0 +1,62 @@
+.form{
+    /* background: var(--grayBlue); */
+    padding: 2em;
+}
+.checkCont{
+    display: flex;
+    justify-content: space-evenly;
+    box-shadow: gray 1px 1px 5px;
+    padding: 1em;
+    width: 80%;
+    margin: auto;
+}
+.formInputs{
+    display: block;
+    margin: 0 auto 0.5em;
+    width: 100%;
+    padding: 0.25em;
+}
+.formTitle{
+    /* color: var(--white); */
+    text-align: center;
+}
+.billCard{
+    display: flex;
+    flex-direction: column;
+    width: 20em;
+    border: gray dashed 0.5px;
+    padding: 1em;
+    box-shadow: gray 1px 1px 5px;
+    margin: 30% 0;
+}
+.billTitle{
+    text-align: center;
+}
+
+.totalTaxes{
+    display: flex;
+    justify-content: space-between;
+}
+.billProducts{
+    display: flex;
+    justify-content: space-between
+}
+.totalSection{
+    display: flex;
+    justify-content: space-between;
+}
+.totalPrice{
+    font-weight: bold;
+    font-size: 20px;
+    text-align: justify;
+}
+.checkSubmit{
+    background: var(--darkBlue);
+    color: var(--white);
+}
+.checkSubmit:hover{
+    background: var(--grayBlue);
+}
+.orderMessage{
+    text-align: center;
+}
