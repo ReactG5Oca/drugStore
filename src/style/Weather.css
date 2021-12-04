@@ -1,0 +1,40 @@
+.Weather h1{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1em;
+}
+
+.Weather .WeatherIcon {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #f1eeee;
+    border-radius: 1em;
+}
+
+.Weather{
+    margin: 3em auto;
+}
+
+.Weather i{
+    margin-right: 0.5em;
+}
+
+@media (max-width:709px) {
+    .Weather .WeatherIcon{
+        display: flex;
+        flex-direction: column;
+    }
+
+    
+.Weather i{
+    margin-right: 0.5em;
+}
+}
+
+
+@media  (min-width:1000px) {
+    .Weather .WeatherIcon{
+        font-size: 1.2em;
+    }
+}
