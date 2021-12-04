@@ -7,14 +7,17 @@
     justify-content: space-evenly;
     box-shadow: gray 1px 1px 5px;
     padding: 1em;
-    width: 80%;
+    width: 80vw;
     margin: auto;
+    border-radius: 1em;
 }
 .formInputs{
     display: block;
     margin: 0 auto 0.5em;
     width: 100%;
     padding: 0.25em;
+    border-radius: 1em;
+    border: grey 0.5px solid;
 }
 .formTitle{
     /* color: var(--white); */
@@ -27,7 +30,8 @@
     border: gray dashed 0.5px;
     padding: 1em;
     box-shadow: gray 1px 1px 5px;
-    margin: 30% 0;
+    margin: 20% 0;
+    border-radius: 1em;
 }
 .billTitle{
     text-align: center;
@@ -57,6 +61,68 @@
 .checkSubmit:hover{
     background: var(--grayBlue);
 }
+.orderCont{
+    box-shadow: 1px 1px 8px grey;
+    width: 40%;
+    margin: 5% auto;
+    padding: 3em;
+    border-radius: 1em;
+}
 .orderMessage{
     text-align: center;
 }
+@media screen and (max-width:1000px){
+.checkCont{
+    width: 90%;
+}
+.billCard{
+    width: 18em;
+}
+}
+@media screen and (max-width:950px){
+.orderCont,.orderCont h2,.orderCont h3 {
+    font-size: 18px;
+}
+}
+@media screen and (max-width:840px){
+    .orderCont{
+        width: 70%;
+    }
+    .checkCont{
+        width: 80vw;
+        flex-direction: column-reverse;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .billCard{
+        width: 18em;
+        margin: 1em auto 3em;
+    }
+    }
+    #msgErr,#msgErr2{
+        color: red;
+    }
+    @media screen and (max-width:560px){
+        .orderCont,.orderCont h2,.orderCont h3 {
+            font-size: 16px;
+            width: 80%;
+        }
+        .form{
+            padding: 0%;
+        }
+        .checkCont{
+            width: 100vw;
+            flex-direction: column-reverse;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1em;
+        }
+        .billCard{
+            width: 18em;
+            font-size: 14px;
+            margin: 1em auto 3em;
+        }
+        .formInputs{
+            width:100%;
+        }
+        }
