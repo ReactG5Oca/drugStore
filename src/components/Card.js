@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import "../style/Card.css";
+import AddToCart from "./AddToCart";
+import Products from "./Products";
 
 class Card extends Component {
   render() {
@@ -14,12 +16,13 @@ class Card extends Component {
             <p>{this.props.description}</p>
           </div>
           <div className="PriceCard"> Price :{this.props.price}</div>
-          <div className="add-to-cart-btn">
+          <AddToCart itemId={this.props.id} />
+          {/* <div className="add-to-cart-btn">
             <div className="btn-icon">
               <i className="fa-solid fa-cart-arrow-down"></i>
             </div>
             <div className="btn-text"> Add to Cart</div>
-          </div>
+          </div> */}
         </div>
       </div>
     );

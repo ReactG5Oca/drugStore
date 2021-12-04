@@ -38,7 +38,7 @@ class FeaturedProducts extends Component {
     this.Element = this.state.ArrProducts.map(function (element) {
       return (
         <Card
-          key={element.id}
+          id={element.id}
           src={element.src}
           title={element.name}
           description={element.description}
@@ -55,6 +55,7 @@ class FeaturedProducts extends Component {
           <h3>Featured Products</h3>
         </div>
         <div className="FeaturedProducts">{this.Element}</div>
+        {/* <AddToCart itemId={this.props.id} /> */}
       </div>
     );
   }
