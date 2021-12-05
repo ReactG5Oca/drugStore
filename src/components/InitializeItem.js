@@ -112,6 +112,33 @@ export class InitializeItem extends Component {
         description: "Lorem ipsum dolor sit amet consectetur adipisicingl",
         price: "38 ",
       },
+      {
+        id: "12",
+        src: "../assets/images/panadolvapor.jpg",
+        onSale: false,
+        name: "Panadol Vapor Release",
+        description: "Lorem ipsum dolor sit amet consectetur adipisicingl",
+        quantity: 1,
+        price: "20",
+      },
+      {
+        id: "13",
+        src: "../assets/images/panadoljoint.jpg",
+        onSale: false,
+        name: "Panadol Joint",
+        description: "Lorem ipsum dolor sit amet consectetur adipisicingl",
+        quantity: 1,
+        price: "20",
+      },
+      {
+        id: "14",
+        src: "../assets/images/PanadolColdandflu.png",
+        onSale: false,
+        name: "Panadol Cold&Flu",
+        description: "Lorem ipsum dolor sit amet consectetur adipisicingl",
+        quantity: 1,
+        price: "20",
+      },
     ];
     if (!localStorage.getItem("itemVariables")) {
       localStorage.setItem("itemVariables", JSON.stringify(myStore));

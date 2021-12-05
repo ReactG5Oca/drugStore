@@ -13,14 +13,7 @@ export class CartComponent extends Component {
     };
   }
   async componentDidMount() {
-    if (localStorage.getItem("cartData")) {
-      await this.setState({
-        arrayOfChoosenItems: JSON.parse(localStorage.getItem("cartData")),
-      });
-      this.calculateTotalPrice();
-    } else {
-      localStorage.setItem("cartData", JSON.stringify([]));
-    }
+    
     if (
       localStorage.getItem("cartKey") &&
       localStorage.getItem("itemVariables")
@@ -29,32 +22,35 @@ export class CartComponent extends Component {
       await this.setState({
         arrayOfKeys: arrayOfKeys,
       });
-
-      let allStorageProduct = JSON.parse(localStorage.getItem("itemVariables"));
+   let test =this.state.arrayOfKeys
+      let newArray=JSON.parse( localStorage.getItem("itemVariables"));
       let ArrayOfNewDataObjects = [];
-      allStorageProduct.forEach((item) => {
-        if (arrayOfKeys.includes(item.id)) {
-          ArrayOfNewDataObjects.push(item);
-          console.log(item);
+      for(let i=0;i<newArray.length;i++){
+        for(let j=0;j<test.length;j++){
+          if(newArray[i].id===arrayOfKeys[j]){
+            ArrayOfNewDataObjects.push(newArray[i]);
+          }
         }
-      });
-      console.log(ArrayOfNewDataObjects);
+       
+      }
+     console.log(ArrayOfNewDataObjects)
       localStorage.setItem("itemVariables",JSON.stringify(ArrayOfNewDataObjects))
       localStorage.setItem("cartData",JSON.stringify(ArrayOfNewDataObjects))
-      this.setState({
+     await this.setState({
         arrayOfChoosenItems:JSON.parse(localStorage.getItem("cartData")),
       })
       
     }
   }
   handleIncreaseQuantity = async (index) => {
-    let prevObj = this.state.arrayOfChoosenItems;
+    let prevObj = JSON.parse(localStorage.getItem("cartData"));
     if (prevObj[index].quantity <= 8) {
       prevObj[index].quantity += 1;
       let prevArr = prevObj;
       await this.setState({
         arrayOfChoosenItems: prevArr,
       });
+    
       localStorage.setItem("cartData", JSON.stringify(prevArr));
       localStorage.setItem("itemVariables", JSON.stringify(prevArr));
       this.calculateTotalPrice();

@@ -11,12 +11,14 @@ import AboutUsPage from "../pages/AboutUsPage";
 import CartPage from "../pages/CartPage";
 import CheckoutPage from "../pages/CheckoutPage";
 import UserProfilePage from "../pages/UserProfilePage";
+import InitializeItem from "./InitializeItem";
 
 export class App extends Component {
   render() {
     return (
       <div>
         <BrowserRouter>
+          <InitializeItem />
           <Nav />
           <Routes>
             <Route path="/" element={<LandingPage />} />

@@ -9,27 +9,30 @@ class FeaturedProducts extends Component {
     this.state = {
       ArrProducts: [
         {
-          id: "0",
+          id: "12",
           src: "../assets/images/panadolvapor.jpg",
           onSale: false,
           name: "Panadol Vapor Release",
           description: "Lorem ipsum dolor sit amet consectetur adipisicingl",
+          quantity: 1,
           price: "20",
         },
         {
-          id: "1",
+          id: "13",
           src: "../assets/images/panadoljoint.jpg",
           onSale: false,
           name: "Panadol Joint",
           description: "Lorem ipsum dolor sit amet consectetur adipisicingl",
+          quantity: 1,
           price: "20",
         },
         {
-          id: "2",
+          id: "14",
           src: "../assets/images/PanadolColdandflu.png",
           onSale: false,
           name: "Panadol Cold&Flu",
           description: "Lorem ipsum dolor sit amet consectetur adipisicingl",
+          quantity: 1,
           price: "20",
         },
       ],
