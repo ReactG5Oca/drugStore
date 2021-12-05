@@ -21,18 +21,20 @@
     
   }
   
-  @media (max-width:768px) {
+  @media (max-width:868px) {
   
       .FeaturedProducts{  
           grid-template-columns: repeat(2,1fr);
+         
         }
       
   }
   
-  @media (max-width:460px){
+  @media (max-width:565px){
       .FeaturedProducts{  
           grid-template-columns: repeat(1,1fr) !important;
-          width: 97%;
+          /* width: 97%; */
+          margin: 0 auto;
         }
       
   }

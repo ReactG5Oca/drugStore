@@ -1,39 +1,50 @@
+
+
+.image-containerCard img {
+  width: 9em;
+  height: 9em;
+  object-fit: cover;
+  transition: 0.5s ease;
+}
+
+.image-containerCard {
+  background-color: #ffffff;
+  overflow: hidden;
+  padding: 0.625em;
+  position: relative;
+  display: flex;
+}
+
+.image-containerCard img {
+  height: 13em;
+  object-fit: cover;
+  mix-blend-mode: initial;
+  border-radius: 8px;
+  margin: auto;
+}
+div .card-title {
+  font-weight: bold;
+  margin-bottom: 0;
+}
+
+
 .Card {
-  display: grid;
-  grid-template-columns: repeat(1, 1fr);
-  background-color: #fdfcfc;
-  padding: 1em;
-  width: 85%;
+  width: 17em;
+  display: flex;
+  flex-direction: column;
+  align-content: space-around;
+  align-items: stretch;
+  justify-content: space-between;
   border: 1px solid #cbcbcb;
   border-radius: 8px;
   box-shadow: 0px 0px 3px 2px #ddd;
   overflow: hidden;
-  margin: 0 auto;
 }
-
-.Card img,
-h1,
-p {
-  margin: 0 auto;
-}
-
-.Card .image-containerCard img {
-  object-fit: cover;
-  transition: 0.5s ease;
-  width: 40%;
-  object-fit: cover;
-  mix-blend-mode: initial;
-  border-radius: 8px;
-}
-
-.Card .image-containerCard {
-  background-color: #ffffff;
-  overflow: hidden;
-  padding: 0.625em;
+.card-brief-description {
   text-align: center;
+  margin-bottom: 0.1em;
 }
-
-.Card .information-containerCard {
+.information-containerCard {
   display: flex;
   flex-direction: column;
   align-content: center;
@@ -42,33 +53,37 @@ p {
   padding: 0.5em;
 }
 
-.Card .PriceCard {
+
+
+.PriceCard{
   border-radius: 4px;
   background-color: var(--darkBlue);
   padding: 0.3125em;
-  font-size: 0.7em;
+  font-size: 0.8em;
   margin: 0.5em;
   color: white;
 }
 
-.Card .btn-icon {
+.btn-icon {
   width: 1.5em;
 }
 
-.Card .btn-icon::after {
+.btn-icon::after {
   content: " ";
   border-right: 1px solid #888585;
   position: relative;
   right: -0.3125em;
 }
 
-.Card .add-to-cart-btn:hover {
+
+
+.add-to-cart-btn:hover {
   cursor: pointer;
   box-shadow: 1px 0px 0px 0px #aca9a9;
   background-color: #efb436d0;
 }
 
-.Card .add-to-cart-btn {
+.add-to-cart-btn {
   display: flex;
   gap: 0.4375em;
   margin-top: 0.5em;
@@ -83,11 +98,11 @@ p {
   transition: background-color 0.5s ease;
 }
 
-.Card .image-containerCard img:hover {
+.image-containerCard img:hover {
   transform: scale(1.1);
 }
 
-.Card .information-containerCard {
+.information-containerCard {
   display: flex;
   flex-direction: column;
   align-content: center;
@@ -100,21 +115,4 @@ p {
   background: -webkit-linear-gradient(to bottom, #4ca1af, #2c3e50);
 }
 
-/* @media (max-width:460px){
-    .FeaturedProducts{  
-        grid-template-columns: repeat(1,1fr) !important;
-        width: 97%;
-      }
-    
-} */
-@media (max-width: 426px) {
-  .Card {
-    margin: 0 auto;
-  }
-}
 
-@media (max-width: 768px) and (min-width: 426px) {
-  .Card {
-    margin: 0 auto;
-  }
-}

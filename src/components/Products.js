@@ -21,10 +21,9 @@ class Products extends Component {
 
     return (
       <>
-        <div className="Productsh1">
-          <h1>Products</h1>
-        </div>{" "}
-        <div className="filterInput">
+
+
+<div className="filterInput">
           <div>Search: </div>
           <input
             type="text"
@@ -34,7 +33,11 @@ class Products extends Component {
           />
           <i class="fas fa-search"></i>
         </div>
-        <div className="Products">
+
+
+      <div className="ProductContainer">
+      <h2 className="titleProducts"> Products</h2>
+        <div className="main-containerProduct">
           {Supplements.filter(
             (sup) =>
               sup.onSale === false &&
@@ -52,7 +55,9 @@ class Products extends Component {
             );
           })}
         </div>
+        </div>
       </>
+
     );
   }
 }

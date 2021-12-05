@@ -12,7 +12,7 @@
 
     }
     
-    .image-information-containerUser   .information-containerUser h1,p {
+      .information-containerUser h1,.image-information-containerUser  p {
       margin: 1em;
     }
 
