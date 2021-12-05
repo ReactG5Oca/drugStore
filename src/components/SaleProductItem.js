@@ -18,7 +18,7 @@ export class SaleProductItem extends Component {
             <div className="card-brief-description">
               {this.props.description}
             </div>
-            <div className="sale-price">{this.props.price}</div>
+            <div className="sale-price">Price: {this.props.price}</div>
             <AddToCart itemId={this.props.id} />
           </div>
         </div>
