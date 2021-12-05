@@ -103,7 +103,7 @@ class Register extends Component {
           <br />
 
           <input
-            type="text"
+            type="password"
             placeholder="ConfirmPass"
             name="confirmpass"
             required
