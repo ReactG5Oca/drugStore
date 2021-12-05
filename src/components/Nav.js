@@ -29,23 +29,25 @@ export class Nav extends Component {
       });
     }
   };
+    logOut=()=>{
+      localStorage.removeItem("currentUser")
+  }
   render() {
     return (
-      <div>
         <div className="Nav navContainer">
           <div className="Nav logoContainer">
+          <NavLink to="/">
             <img
               className="Nav navLogo"
               src={this.state.src1}
-              alt="Site Logo"
-            />
+              alt="Site Logo"/></NavLink>
             <img
               onClick={this.menu}
               className="menu"
               src="https://img.icons8.com/external-blue-wire-juicy-fish/30/4a90e2/external-bars-ui-elements-blue-wire-blue-wire-juicy-fish-2.png"
               alt="toggleBtn"
             />
-            <div className="Nav logoName">Capsule</div>
+           <div className="Nav logoName">Capsule</div>
           </div>
           <ul className={this.state.class2}>
             <li className={this.state.class1}>
@@ -58,20 +60,31 @@ export class Nav extends Component {
               <NavLink to="/aboutus">About Us</NavLink>
             </li>
             <span className={this.state.class3}>
-              <li className={this.state.class1}>
-                <button className="Nav btn">
-                  <NavLink to="/login">Log In</NavLink>
-                </button>
-              </li>
-              <li className={this.state.class1}>
+                 {(localStorage.getItem("currentUser")!==null)?
+                 <>
+                 <NavLink to="/profile"> <div className={this.state.class1}> 
+                 <img alt="profile icon" src="https://img.icons8.com/color/45/000000/test-account.png"/>
+                  </div></NavLink>
+                  <NavLink to="/cart"><li className={this.state.class1}>
+                  <img alt="cart icon" src="https://img.icons8.com/ios/45/4a90e2/shopping-cart.png"/>
+                  </li></NavLink>
+                 <li className={this.state.class1}>
+                   <button className='Nav btn' onClick={this.logOut}>Log Out</button></li>
+                  </>
+                :<> <li className={this.state.class1}>
+                 <button className="Nav btn">
+                   <NavLink to="/login">Log In</NavLink>
+                 </button></li>
+               <li className={this.state.class1}>
                 <button className="Nav btn">
                   <NavLink to="/register">Register</NavLink>
-                </button>
-              </li>
+                </button></li></>}
+             
+              
             </span>
           </ul>
         </div>
-      </div>
+    
     );
   }
 }

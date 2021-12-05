@@ -38,30 +38,20 @@ export default class Checkout extends Component {
         }
     }
     render(){
-        let data=[
-            {
-                productName:"Drug 1",
-                price:"JOD 20",
-            },
-            {
-                productName:"Drug 2",
-                price:"JOD 11",
-            },
-            {
-                productName:"Drug 3",
-                price:"JOD 8",
-            },
-            {
-                productName:"Drug 4",
-                price:"JOD 30",
-            },
-              "JOD 0",
-              "JOD 69",
-        ]
-        let values=data.map((item,key)=>(
-           <BillCards price={item.price} productName={item.productName} totalPrice={item.total} key={key} />
-           
-        )
+        let data=[]
+        data=JSON.parse(localStorage.getItem("cartData"))
+        let total=()=>{
+            let totalAmount=0
+         data.forEach(element => {
+            totalAmount+= Number(element.price)*element.quantity
+            console.log (totalAmount)     
+        });
+        return totalAmount
+       }
+       console.log(data)
+       let values=data.map((item,index)=>(
+           <BillCards price={Number(item.price)*item.quantity} productName={item.name} quantity={item.quantity} index={index+1} key={index} />   
+           )
         )
         if(this.state.submitState!=="submitted"){
         return(
@@ -99,13 +89,13 @@ export default class Checkout extends Component {
                 <div className="billCard">
                 <h3 className="billTitle">Your Order</h3>
                  <span className="products"> {values} </span><hr/>
-                  <span className="totalTaxes">purchase
-                  <span>{data[data.length-1]}</span></span>
-                  <span className="totalTaxes">Taxes
-                  <span>{data[data.length-2]}</span></span>
+                  <span className="totalTaxes">Purchase
+                  <span>{total()}</span></span>
+                  <span className="totalTaxes">Services
+                  <span>2</span></span>
                   <hr/>
                   <div className="totalSection"><span>Total:  </span>
-                  <span className="totalPrice"> {data[data.length-1]}</span>
+                  <span className="totalPrice">{Number(total()+2)}</span>
                   </div>
                   </div>
                   </div>
