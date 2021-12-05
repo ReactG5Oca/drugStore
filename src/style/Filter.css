@@ -18,3 +18,8 @@ input#filterItem {
   position: absolute;
   right: 1em;
 }
+@media only screen and (max-width: 780px) {
+  .filterInput {
+    width: 80%;
+  }
+}

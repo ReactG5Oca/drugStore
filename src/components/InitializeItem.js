@@ -110,15 +110,13 @@ export class InitializeItem extends Component {
         name: "Iron",
         quantity: 1,
         description: "Lorem ipsum dolor sit amet consectetur adipisicingl",
-        price: "38 JD",
+        price: "38 ",
       },
     ];
     if (!localStorage.getItem("itemVariables")) {
       localStorage.setItem("itemVariables", JSON.stringify(myStore));
-    }
-    else{
+    } else {
       localStorage.setItem("itemVariables1", JSON.stringify(myStore));
-
     }
     return <div></div>;
   }
