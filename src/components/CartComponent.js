@@ -65,6 +65,7 @@ export class CartComponent extends Component {
     if (prevObj[index].quantity >= 2) {
       prevObj[index].quantity -= 1;
       let prevArr = prevObj;
+      localStorage.setItem("itemVariables", JSON.stringify(prevArr));
       localStorage.setItem("cartData", JSON.stringify(prevArr));
       this.calculateTotalPrice();
     } else {
@@ -73,6 +74,7 @@ export class CartComponent extends Component {
       this.setState({
         arrayOfChoosenItems: prevArr,
       });
+      localStorage.setItem("itemVariables", JSON.stringify(prevArr));
       localStorage.setItem("cartData", JSON.stringify(prevArr));
       this.calculateTotalPrice();
     }
