@@ -9,9 +9,13 @@ export class ChoosenItem extends Component {
           <img src={this.props.itemImage} alt={this.props.itemName} />
         </div>
         <div className="itemQuantityContainer">
-          <button onClick={() => {
+          <button
+            onClick={() => {
               this.props.handleDecreaseQuantity(this.props.itemIndex);
-            }}>-</button>
+            }}
+          >
+            -
+          </button>
           <div className="itemQuantity">{this.props.itemQuantity}</div>
           <button
             onClick={() => {

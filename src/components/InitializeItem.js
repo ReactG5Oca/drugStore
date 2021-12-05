@@ -9,6 +9,7 @@ export class InitializeItem extends Component {
         onSale: false,
         name: "Aspirn",
         description: "Lorem ipsum dolor sit amet consectetur adipisicingl",
+        quantity: 1,
         price: "20",
       },
       {
@@ -17,6 +18,7 @@ export class InitializeItem extends Component {
         onSale: false,
         name: "Advil",
         description: "Lorem ipsum dolor sit amet consectetur adipisicingl",
+        quantity: 1,
         price: "20",
       },
       {
@@ -25,6 +27,7 @@ export class InitializeItem extends Component {
         onSale: false,
         name: "Rennie",
         description: "Lorem ipsum dolor sit amet consectetur adipisicingl",
+        quantity: 1,
         price: "20",
       },
       {
@@ -33,6 +36,7 @@ export class InitializeItem extends Component {
         onSale: false,
         name: "Mucosolvan",
         description: "Lorem ipsum dolor sit amet consectetur adipisicingl",
+        quantity: 1,
         price: "20",
       },
       {
@@ -41,6 +45,7 @@ export class InitializeItem extends Component {
         onSale: false,
         name: "Mobic",
         description: "Lorem ipsum dolor sit amet consectetur adipisicingl",
+        quantity: 1,
         price: "20",
       },
       {
@@ -49,6 +54,7 @@ export class InitializeItem extends Component {
         onSale: false,
         name: "Voltaren Gel",
         description: "Lorem ipsum dolor sit amet consectetur adipisicingl",
+        quantity: 1,
         price: "20",
       },
       {
@@ -57,6 +63,7 @@ export class InitializeItem extends Component {
         onSale: false,
         name: "Brufen",
         description: "Lorem ipsum dolor sit amet consectetur adipisicingl",
+        quantity: 1,
         price: "20",
       },
       {
@@ -65,6 +72,7 @@ export class InitializeItem extends Component {
         onSale: false,
         name: "Migraine Relief",
         description: "Lorem ipsum dolor sit amet consectetur adipisicingl",
+        quantity: 1,
         price: "20",
       },
       {
@@ -73,6 +81,7 @@ export class InitializeItem extends Component {
         onSale: false,
         name: "Panadol Advance",
         description: "Lorem ipsum dolor sit amet consectetur adipisicingl",
+        quantity: 1,
         price: "20",
       },
 
@@ -82,6 +91,7 @@ export class InitializeItem extends Component {
         onSale: true,
         name: "Nutra-c",
         description: "Lorem ipsum dolor sit amet consectetur adipisicingl",
+        quantity: 1,
         price: "20",
       },
       {
@@ -90,6 +100,7 @@ export class InitializeItem extends Component {
         onSale: true,
         name: "Omega-3",
         description: "Lorem ipsum dolor sit amet consectetur adipisicingl",
+        quantity: 1,
         price: "20",
       },
       {
@@ -97,11 +108,18 @@ export class InitializeItem extends Component {
         src: "../assets/images/iron.jpg",
         onSale: true,
         name: "Iron",
+        quantity: 1,
         description: "Lorem ipsum dolor sit amet consectetur adipisicingl",
         price: "38 JD",
       },
     ];
-    localStorage.setItem("itemVariables", JSON.stringify(myStore));
+    if (!localStorage.getItem("itemVariables")) {
+      localStorage.setItem("itemVariables", JSON.stringify(myStore));
+    }
+    else{
+      localStorage.setItem("itemVariables1", JSON.stringify(myStore));
+
+    }
     return <div></div>;
   }
 }

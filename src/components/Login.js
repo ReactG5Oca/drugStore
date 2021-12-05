@@ -7,7 +7,7 @@ export default function LoginHoc() {
     if (haveEmptyCart === "yes") {
       navigate("/");
     } else {
-      navigate("/checkout");
+      navigate("/cart");
     }
   };
   return <Login handleLoginSubmitRedirect={handleLoginSubmitRedirect} />;

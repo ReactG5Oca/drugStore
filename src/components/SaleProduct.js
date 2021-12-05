@@ -10,7 +10,7 @@ export class SaleProduct extends Component {
 
   render() {
     const Supplements = localStorage.getItem("itemVariables")
-      ? JSON.parse(localStorage.getItem("itemVariables"))
+      ? JSON.parse(localStorage.getItem("itemVariables")).length==12? JSON.parse(localStorage.getItem("itemVariables")):JSON.parse(localStorage.getItem("itemVariables1"))
       : [];
     return (
       <div className="salesProductContainer">
