@@ -14,22 +14,22 @@ class Weather extends Component{
       Temp_min:'',
       Description:'',
   }
-  this.getWeather();
-    }
+}
+componentDidMount(){this.getWeather();}
    
 
 getWeather  =async ()=>{
-    const response = await fetch("https://api.openweathermap.org/data/2.5/weather?q=Jordan&units=metric&appid=ff0d4cb052ce451d0aa511db81b7d622");
-    const data = await response.json();
+    // const response = await fetch("https://api.openweathermap.org/data/2.5/weather?q=Jordan&units=metric&appid=8abb935f5284ff69792ed8caa98a3f52");
+    // const data = await response.json();
     // console.log(data);
 
-    this.setState({
-        City:data.name,
-        Celsius:Math.floor(data.main.temp),
-        Description:data.weather[0].description,
+    // this.setState({
+    //     City:data.name,
+    //     Celsius:Math.floor(data.main.temp),
+    //     Description:data.weather[0].description,
 
 
-    })
+    // })
 
 }
     render(){
