@@ -23,7 +23,15 @@ export class AddToCart extends Component {
       cartArray.push(cartAddArry);
     }
     localStorage.setItem("cartKey", JSON.stringify(cartArray));
+
     console.log(cartArray);
+
+
+    localStorage.removeItem("cartData");
+    // localStorage.removeItem("itemVariables");
+    console.log(cartArray);
+
+
     // in case there is already items ID in the local storage. add the ID to the
 
     // save the JSON array to the local storage

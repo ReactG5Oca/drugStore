@@ -22,6 +22,9 @@ export class CartComponent extends Component {
       await this.setState({
         arrayOfKeys: arrayOfKeys,
       });
+
+  
+
    let test =this.state.arrayOfKeys
       let newArray=JSON.parse( localStorage.getItem("itemVariables"));
       let ArrayOfNewDataObjects = [];
@@ -33,12 +36,27 @@ export class CartComponent extends Component {
         }
        
       }
-     console.log(ArrayOfNewDataObjects)
+
+  
+     
       localStorage.setItem("itemVariables",JSON.stringify(ArrayOfNewDataObjects))
       localStorage.setItem("cartData",JSON.stringify(ArrayOfNewDataObjects))
      await this.setState({
         arrayOfChoosenItems:JSON.parse(localStorage.getItem("cartData")),
       })
+
+          // let haneen=[];
+    //  console.log(JSON.parse( localStorage.getItem("itemVariables")));
+      // if(arrayOfKeys.length!==newArray.length){
+        // for(let i=0; i<arrayOfKeys.length;i++){
+        //  if( arrayOfKeys[i]!==newArray[i].id){
+          //  console.log(newArray[i].id)
+        //  newArray.push(arrayOfKeys[i]);
+        //  }
+        // }
+        // console.log(arrayOfKeys)
+        // console.log(JSON.parse(localStorage.getItem("cartData")));
+      // }
       
     }
   }
@@ -65,11 +83,23 @@ export class CartComponent extends Component {
       localStorage.setItem("cartData", JSON.stringify(prevArr));
       this.calculateTotalPrice();
     } else {
+      let cartkeyarray=[];
+   
       let prevArr = this.state.arrayOfChoosenItems;
+ 
+
+   
       prevArr.splice(index, 1);
       this.setState({
         arrayOfChoosenItems: prevArr,
       });
+
+      prevArr.forEach(data=>cartkeyarray.push(data.id));
+
+
+      localStorage.setItem("cartKey", JSON.stringify(cartkeyarray));
+  
+
       localStorage.setItem("itemVariables", JSON.stringify(prevArr));
       localStorage.setItem("cartData", JSON.stringify(prevArr));
       this.calculateTotalPrice();
