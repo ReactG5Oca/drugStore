@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { NavLink } from 'react-router-dom'
 import "../style/footer.css"
 export class Footer extends Component {
     render() {
@@ -7,57 +8,57 @@ export class Footer extends Component {
             <div className="Footer footer">
             <div className="Footer firstCol">
                 <div>
-                ABOUT
                 </div>
-                <div className="Footer about">
+                <div className="Footer about">ABOUT<br/>
+                <NavLink className="directLink" to="/aboutus">
                 Our store is more than just another average ondivne retailer. We sell not only top quality products, but give our customers a positive online shopping experience.
-                </div>
+                </NavLink></div>
             </div>
             <ul className="Footer secondCol"><br/>
             INFORMATION
             <li className="Footer Items">
-            About Us
+            <NavLink className="directLink" to="/aboutus">About Us</NavLink>
             </li> 
             <li className="Footer Items">
-            Customer Service
+            <a className="footerAnchor" href="https://reactjs.org/docs/getting-started.html" target="_blank">Customer Service</a>
             </li>
             <li className="Footer Items">
-            Privacy Policy   
+            <a className="footerAnchor" href="https://reactjs.org/tutorial/tutorial.html#what-are-we-building" target="_blank">Privacy Policy  </a> 
             </li>
             <li className="Footer Items">
-            Contact Us
+            <a className="footerAnchor" href="https://reactjs.org/tutorial/tutorial.html#before-we-start-the-tutorial" target="_blank">Contact Us</a>
             </li>
             </ul>
             <ul className="Footer thirdCol"><br/>
             Shipping & Delivery
             <li className="Footer Items">
-            Secure payment
+            <a className="footerAnchor" href="https://reactjs.org/tutorial/tutorial.html#setup-for-the-tutorial" target="_blank">Secure payment</a>
             </li> 
             <li className="Footer Items">
-            Guarantee
+            <a className="footerAnchor" href="https://reactjs.org/tutorial/tutorial.html#help-im-stuck" target="_blank">Guarantee</a>
             </li>
             <li className="Footer Items">
-            Terms & Conditions  
+            <a className="footerAnchor" href="https://reactjs.org/" target="_blank">Terms & Conditions</a>
             </li>
             </ul>
             <ul className="Footer forthCol"><br/>
             CATEGORIES
             <li className="Footer Items">
-            Home Medicine
+            <NavLink className="directLink" to="/store">Medicine</NavLink>
             </li> 
             <li className="Footer Items">
-            Baby & Child
-            </li>
-            <li className="Footer Items">
-            Diet & Nutrition 
+            <NavLink className="directLink" to="/store">Supplements</NavLink>
             </li>
             </ul>
             </div>
                 <div className="Footer icons">
                     <span>
-                <img src="https://img.icons8.com/color/48/000000/facebook-new.png" alt="Facebook account"/>
-                <img src="https://img.icons8.com/color/48/000000/linkedin-circled--v1.png" alt="Linked account"/>
-                <img src="https://img.icons8.com/ios-filled/45/4a90e2/github.png" alt="Github account"/>
+                    <a className="footerAnchor" href="https://www.facebook.com/" target="_blank">
+                        <img src="https://img.icons8.com/color/40/000000/facebook-new.png" alt="Facebook account"/></a>
+                    <a className="footerAnchor" href="https://www.linkedin.com/in/aya-meizer/" target="_blank">
+                    <img src="https://img.icons8.com/color/40/000000/linkedin-circled--v1.png" alt="Linked account"/></a>
+                    <a className="footerAnchor" href="https://reactjs.org/" target="_blank">
+                        <img src="https://img.icons8.com/ios-filled/37/4a90e2/github.png" alt="Github account"/></a>
                 </span>
                 <span className="copyright">&copy; Copyrights</span>
                 </div>
