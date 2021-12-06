@@ -1,3 +1,6 @@
+.checkoutPageContainer{
+    min-height: 50vh;
+}
 .form{
     /* background: var(--grayBlue); */
     padding: 2em;

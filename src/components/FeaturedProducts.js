@@ -45,6 +45,7 @@ class FeaturedProducts extends Component {
           id={element.id}
           src={element.src}
           title={element.name}
+          quantity={element.quantity}
           description={element.description}
           price={element.price}
         />

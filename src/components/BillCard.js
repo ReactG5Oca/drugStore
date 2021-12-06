@@ -8,7 +8,7 @@ export default class BillCards extends Component {
     <span>
     <span  className="billProducts">
         <span>{this.props.index}- {this.props.productName} * {this.props.quantity}</span>
-        <span>{this.props.price}</span>
+        <span>{this.props.price}Jd</span>
         </span>
            
     </span>

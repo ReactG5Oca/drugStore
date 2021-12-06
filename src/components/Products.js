@@ -49,6 +49,7 @@ class Products extends Component {
                 src={item.src}
                 title={item.name}
                 description={item.description}
+                quantity={item.quantity}
                 price={item.price}
                 id={item.id}
               />

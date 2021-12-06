@@ -37,9 +37,12 @@ export default class Checkout extends Component {
             this.setState({submitState:"ok"})
         }
     }
+    placeOrder=()=>{
+        localStorage.setItem("cartKey",JSON.stringify([]))
+    }
     render(){
         let data=[]
-        data=JSON.parse(localStorage.getItem("cartData"))
+        data= JSON.parse(localStorage.getItem("cartKey"))
         let total=()=>{
             let totalAmount=0
          data.forEach(element => {
@@ -50,12 +53,12 @@ export default class Checkout extends Component {
        }
        console.log(data)
        let values=data.map((item,index)=>(
-           <BillCards price={Number(item.price)*item.quantity} productName={item.name} quantity={item.quantity} index={index+1} key={index} />   
+           <BillCards price={Number(item.price)*item.quantity} productName={item.title} quantity={item.quantity} index={index+1} key={index} />   
            )
         )
         if(this.state.submitState!=="submitted"){
         return(
-            <div>
+            <div className="checkoutPageContainer">
             <form className="form" onSubmit={this.submitted}>
                 <div className="checkCont">
                 <div className="formSection">
@@ -82,7 +85,7 @@ export default class Checkout extends Component {
                    <label htmlFor="cash">Cash on delivery</label>
                    </div>
                    <br/>
-                   <input type="submit" value="Place your order" className="formInputs checkSubmit"></input>
+                   <input type="submit" value="Place your order" className="formInputs checkSubmit" onClick={this.placeOrder}></input>
                </div>
                </div>
                <div className="bill">
@@ -90,12 +93,12 @@ export default class Checkout extends Component {
                 <h3 className="billTitle">Your Order</h3>
                  <span className="products"> {values} </span><hr/>
                   <span className="totalTaxes">Purchase
-                  <span>{total()}</span></span>
+                  <span>{total()} Jd</span></span>
                   <span className="totalTaxes">Services
-                  <span>2</span></span>
+                  <span>2%</span></span>
                   <hr/>
                   <div className="totalSection"><span>Total:  </span>
-                  <span className="totalPrice">{Number(total()+2)}</span>
+                  <span className="totalPrice">{Number(total()*0.02 +total())} Jd</span>
                   </div>
                   </div>
                   </div>

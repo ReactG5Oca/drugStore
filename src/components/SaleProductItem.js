@@ -19,7 +19,7 @@ export class SaleProductItem extends Component {
               {this.props.description}
             </div>
             <div className="sale-price">Price: {this.props.price}</div>
-            <AddToCart itemId={this.props.id} />
+            <AddToCart itemId={this.props} />
           </div>
         </div>
       </div>

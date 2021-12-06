@@ -17,7 +17,7 @@ class Card extends Component {
             <p>{this.props.description}</p>
           </div>
           <div className="PriceCard"> Price :{this.props.price}</div>
-          <AddToCart itemId={this.props.id} />
+          <AddToCart itemId={this.props} />
         </div>
       </div>
       </div>

@@ -7,125 +7,82 @@ export class CartComponent extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      arrayOfChoosenItems: [],
       totalItemsPrice: 0,
-      arrayOfKeys: [],
+      cartItems: [],
     };
   }
   async componentDidMount() {
-    
-    if (
-      localStorage.getItem("cartKey") &&
-      localStorage.getItem("itemVariables")
-    ) {
-      let arrayOfKeys = JSON.parse(localStorage.getItem("cartKey"));
-      await this.setState({
-        arrayOfKeys: arrayOfKeys,
-      });
+    let receivedItems = localStorage.getItem("cartKey")
+      ? JSON.parse(localStorage.getItem("cartKey"))
+      : [];
 
-  
-
-   let test =this.state.arrayOfKeys
-      let newArray=JSON.parse( localStorage.getItem("itemVariables"));
-      let ArrayOfNewDataObjects = [];
-      for(let i=0;i<newArray.length;i++){
-        for(let j=0;j<test.length;j++){
-          if(newArray[i].id===arrayOfKeys[j]){
-            ArrayOfNewDataObjects.push(newArray[i]);
-          }
-        }
-       
-      }
-
-  
-     
-      localStorage.setItem("itemVariables",JSON.stringify(ArrayOfNewDataObjects))
-      localStorage.setItem("cartData",JSON.stringify(ArrayOfNewDataObjects))
-     await this.setState({
-        arrayOfChoosenItems:JSON.parse(localStorage.getItem("cartData")),
-      })
-
-          // let haneen=[];
-    //  console.log(JSON.parse( localStorage.getItem("itemVariables")));
-      // if(arrayOfKeys.length!==newArray.length){
-        // for(let i=0; i<arrayOfKeys.length;i++){
-        //  if( arrayOfKeys[i]!==newArray[i].id){
-          //  console.log(newArray[i].id)
-        //  newArray.push(arrayOfKeys[i]);
-        //  }
-        // }
-        // console.log(arrayOfKeys)
-        // console.log(JSON.parse(localStorage.getItem("cartData")));
-      // }
-      
-    }
+    await this.setState({
+      cartItems: receivedItems,
+    });
+    console.log(this.state.cartItems);
+    this.calculateTotalPrice();
   }
   handleIncreaseQuantity = async (index) => {
-    let prevObj = JSON.parse(localStorage.getItem("cartData"));
-    if (prevObj[index].quantity <= 8) {
-      prevObj[index].quantity += 1;
-      let prevArr = prevObj;
+    let prevStorageData = this.state.cartItems;
+    if (prevStorageData[index].quantity <= 8) {
+      prevStorageData[index].quantity += 1;
+
       await this.setState({
-        arrayOfChoosenItems: prevArr,
+        cartItems: prevStorageData,
       });
-    
-      localStorage.setItem("cartData", JSON.stringify(prevArr));
-      localStorage.setItem("itemVariables", JSON.stringify(prevArr));
+      localStorage.setItem("cartKey", JSON.stringify(this.state.cartItems));
       this.calculateTotalPrice();
     }
   };
   handleDecreaseQuantity = async (index) => {
-    let prevObj = this.state.arrayOfChoosenItems;
-    if (prevObj[index].quantity >= 2) {
-      prevObj[index].quantity -= 1;
-      let prevArr = prevObj;
-      localStorage.setItem("itemVariables", JSON.stringify(prevArr));
-      localStorage.setItem("cartData", JSON.stringify(prevArr));
+    let prevStorageData = this.state.cartItems;
+    if (prevStorageData[index].quantity >= 2) {
+      prevStorageData[index].quantity -= 1;
+
+      await this.setState({
+        cartItems: prevStorageData,
+      });
+      localStorage.setItem("cartKey", JSON.stringify(this.state.cartItems));
       this.calculateTotalPrice();
     } else {
-      let cartkeyarray=[];
-   
-      let prevArr = this.state.arrayOfChoosenItems;
- 
-
-   
-      prevArr.splice(index, 1);
+      let prevStorageData = this.state.cartItems;
+      prevStorageData.splice(index, 1);
       this.setState({
-        arrayOfChoosenItems: prevArr,
+        cartItems: prevStorageData,
       });
-
-      prevArr.forEach(data=>cartkeyarray.push(data.id));
-
-
-      localStorage.setItem("cartKey", JSON.stringify(cartkeyarray));
-  
-
-      localStorage.setItem("itemVariables", JSON.stringify(prevArr));
-      localStorage.setItem("cartData", JSON.stringify(prevArr));
+      localStorage.setItem("cartKey", JSON.stringify(this.state.cartItems));
       this.calculateTotalPrice();
     }
   };
   calculateTotalPrice = async () => {
     let sum = 0;
-    this.state.arrayOfChoosenItems.forEach(
-      (data) => (sum += data.price * data.quantity)
-    );
+    this.state.cartItems.forEach((data) => (sum += data.price * data.quantity));
     await this.setState({
       totalItemsPrice: sum,
     });
+    this.updateUserCart();
+  };
+  updateUserCart = () => {
+    if (localStorage.getItem("currentUser")) {
+      let userInfoObj = JSON.parse(localStorage.getItem("currentUser"));
+
+      userInfoObj.userCartItems = this.state.cartItems;
+
+      localStorage.setItem("currentUser", JSON.stringify(userInfoObj));
+    }
   };
   render() {
     return (
       <div className="CheckoutPageContainer">
         <h2 className="CheckoutPageTitle"> Your Cart</h2>
         <div className="choosenIemsContainer">
-          {this.state.arrayOfChoosenItems.length > 0 ? (
+          {this.state.cartItems.length > 0 ? (
             <>
-              {this.state.arrayOfChoosenItems.map((data, index) => (
+              {this.state.cartItems.map((data, index) => (
                 <ChoosenItem
                   key={index}
                   itemIndex={index}
-                  itemName={data.name}
+                  itemName={data.title}
                   itemPrice={data.price}
                   itemQuantity={data.quantity}
                   itemImage={data.src}
@@ -159,4 +116,3 @@ export class CartComponent extends Component {
 }
 
 export default CartComponent;
-

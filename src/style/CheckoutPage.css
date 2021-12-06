@@ -1,6 +1,7 @@
 .CheckoutPageContainer{
     margin: 3% auto;
     text-align: center;
+    min-height: 50vh;
 }
 .CheckoutPageContainer .CheckoutPageTitle{
     font-weight: 900;

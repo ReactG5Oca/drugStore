@@ -7,7 +7,7 @@ export default function LoginHoc() {
     if (haveEmptyCart === "yes") {
       navigate("/");
     } else {
-      navigate("/cart");
+      navigate("/checkout");
     }
   };
   return <Login handleLoginSubmitRedirect={handleLoginSubmitRedirect} />;
@@ -21,6 +21,7 @@ class Login extends Component {
       password: "",
       usersStorageArr: [],
       errorMessage: "",
+      cartItems: [],
     };
   }
   componentDidMount() {
@@ -32,6 +33,14 @@ class Login extends Component {
           "users",
           JSON.stringify(this.state.usersStorageArr)
         );
+
+    localStorage.getItem("cartKey")
+      ? 
+      this.setState({
+          cartItems: JSON.parse(localStorage.getItem("cartKey")),
+        })
+      :
+       console.log("hooraay");
   }
 
   loginsubmit = (e) => {
@@ -64,7 +73,7 @@ class Login extends Component {
           userCartItems: storageUserCart,
         })
       );
-      if (storageUserCart.length > 0) {
+      if (this.state.cartItems.length > 0) {
         this.props.handleLoginSubmitRedirect("no");
       } else {
         this.props.handleLoginSubmitRedirect("yes");
@@ -84,7 +93,12 @@ class Login extends Component {
           <h5 style={{ color: "red" }}>{this.state.errorMessage}</h5>
           <input type="email" placeholder="Email" name="userEmail" required />
           <br />
-          <input type="password" placeholder="Password" name="password" required />
+          <input
+            type="password"
+            placeholder="Password"
+            name="password"
+            required
+          />
           <br />
           <Link to="/register"> You Don't Have An Account ?</Link>
           <button type="submit" style={{ color: "white" }}>
