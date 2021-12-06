@@ -88,8 +88,8 @@ class Register extends Component {
   render() {
     return (
       <div className="register">
-        <form className="form-container" onSubmit={this.check}>
-          <h2 style={{ fontFamily: "sans-serif" }}>Sign Up</h2>
+        <form className="form1-container" onSubmit={this.check}>
+          <h2 style={{ fontFamily: "sans-serif" , color:"white"}}>Sign Up</h2>
           <br />
           <input type="text" placeholder="UserName" name="name" required />
           <h6 style={{ color: "red" }}>{this.state.mssgname}</h6>
@@ -109,10 +109,9 @@ class Register extends Component {
             required
           />
           <h6 style={{ color: "red" }}>{this.state.mssgpas}</h6>
-          <br />
-          <br />
-          <Link to="/login"> You Have An Account ?</Link>
-
+          
+          <Link to="/login" style={{color:"lightblue"}}> You Have An Account ?</Link>
+        <br/>
           <button type="submit" style={{ color: "white" }}>
             Register
           </button>
