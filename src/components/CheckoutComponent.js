@@ -151,17 +151,19 @@ export default class Checkout extends Component {
                   <hr />
                   <span className="totalTaxes">
                     Purchase
-                    <span>{total()} Jd</span>
+                    <span>
+                    
+                      {Math.round(total()*100)/100} Jd</span>
                   </span>
                   <span className="totalTaxes">
                     Services
-                    <span>2%</span>
+                    <span>4%</span>
                   </span>
                   <hr />
                   <div className="totalSection">
                     <span>Total: </span>
                     <span className="totalPrice">
-                      {Number(total() * 0.02 + total())} Jd
+                    {Math.round(Number(total() * 0.04 + total())*100)/100} Jd
                     </span>
                   </div>
                 </div>
