@@ -58,7 +58,7 @@ export default class Checkout extends Component {
     };
     let values = data.map((item, index) => (
       <BillCards
-        price={Number(item.price) * item.quantity}
+        price={Math.round(Number(item.price) * item.quantity * 100) / 100}
         productName={item.title}
         quantity={item.quantity}
         index={index + 1}
@@ -149,19 +149,18 @@ export default class Checkout extends Component {
                   <hr />
                   <span className="totalTaxes">
                     Purchase
-                    <span>
-                    
-                      {Math.round(total()*100)/100} Jd</span>
+                    <span>{Math.round(total() * 100) / 100} Jd</span>
                   </span>
                   <span className="totalTaxes">
-                    Services
+                    Taxes
                     <span>4%</span>
                   </span>
                   <hr />
                   <div className="totalSection">
                     <span>Total: </span>
                     <span className="totalPrice">
-                    {Math.round(Number(total() * 0.04 + total())*100)/100} Jd
+                      {Math.round(Number(total() * 0.04 + total()) * 100) / 100}{" "}
+                      Jd
                     </span>
                   </div>
                 </div>

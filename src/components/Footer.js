@@ -55,9 +55,9 @@ export class Footer extends Component {
                     <span>
                     <a className="footerAnchor" href="https://www.facebook.com/" target="_blank" rel="noreferrer">
                         <img src="https://img.icons8.com/color/40/000000/facebook-new.png" alt="Facebook account"/></a>
-                    <a className="footerAnchor" href="https://www.linkedin.com/in/aya-meizer/" target="_blank" rel="noreferrer">
+                    <a className="footerAnchor" href="https://www.linkedin.com/" target="_blank" rel="noreferrer">
                     <img src="https://img.icons8.com/color/40/000000/linkedin-circled--v1.png" alt="Linked account"/></a>
-                    <a className="footerAnchor" href="https://reactjs.org/" target="_blank" rel="noreferrer">
+                    <a className="footerAnchor" href="https://github.com/ReactG5Oca/drugStore" target="_blank" rel="noreferrer">
                         <img src="https://img.icons8.com/ios-filled/37/4a90e2/github.png" alt="Github account"/></a>
                 </span>
                 <span className="copyright">&copy; Copyrights</span>

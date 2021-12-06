@@ -10,6 +10,9 @@ export default function NewCheckout() {
     if (!localStorage.getItem("currentUser")) {
       navigate("/login");
     }
+    if (!JSON.parse(localStorage.getItem("cartKey")).length) {
+      navigate("/");
+    }
   });
   return <CheckoutPage />;
 }
