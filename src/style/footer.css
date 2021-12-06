@@ -56,6 +56,10 @@
     
     }
 }
+.footerAnchor,.directLink{
+    text-decoration: none;
+    color: gainsboro;
+}
 .copyright{
     color: var(--white);
 }
