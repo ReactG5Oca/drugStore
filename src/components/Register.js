@@ -105,7 +105,7 @@ class Register extends Component {
           <h6 style={{ color: "red" }}>{this.state.mssgpas}</h6>
           
           <Link to="/login" style={{color:"lightblue"}}> You Have An Account ?</Link>
-        <br/>
+        {/* <br/> */}
           <button type="submit" style={{ color: "white" }}>
             Register
           </button>

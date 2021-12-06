@@ -68,7 +68,7 @@ div.login > form > button {
 @media only screen and (max-width: 500px) {
   .form-container {
     height: 70%;
-    width: 100%;
+    width: 90%;
   }
   div.login > form >input {
     height: 3em;

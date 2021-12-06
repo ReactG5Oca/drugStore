@@ -36,7 +36,6 @@ div.register > form > button {
 
 @media only screen and (max-width: 1240px) and (min-width: 780px) {
   .form1-container {
-    height: 70%;
     width: 40%;
     padding: 0.5em;
   }
@@ -51,7 +50,6 @@ div.register > form > button {
 }
 @media only screen and (max-width: 780px) and (min-width: 500px) {
   .form1-container {
-    height: 70%;
     width: 60%;
   }
   div.register > form >input {
@@ -65,8 +63,7 @@ div.register > form > button {
 }
 @media only screen and (max-width: 500px) {
   .form1-container {
-    height: 70%;
-    width: 100%;
+    width: 90%;
   }
   div.register > form >input {
     height: 3em;

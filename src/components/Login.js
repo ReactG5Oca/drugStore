@@ -101,7 +101,7 @@ class Login extends Component {
           />
           <br />
           <Link to="/register" style={{color:"lightblue"}}> You Don't Have An Account ?</Link>
-          <br/>
+          {/* <br/> */}
           <button type="submit" style={{ color: "white" }}>
             login
           </button>
