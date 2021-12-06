@@ -92,7 +92,7 @@ export class CartComponent extends Component {
                 />
               ))}
               <h4 className="totalPriceResulth4">
-                Total Price : {this.state.totalItemsPrice} Jd
+                Total Price : {Math.round(this.state.totalItemsPrice*100)/100} Jd
               </h4>
               <button className="checkoutBtn" onClick={this.saveCartToStorage}>
                 <Link to="/checkout"> Checkout</Link>
