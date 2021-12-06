@@ -14,7 +14,7 @@ export class MeetOurTeam extends Component {
             },
             {
                 bg:"https://naaweb.org/media/k2/items/cache/4556f9757414c95d6b9db044b0c9421c_XL.jpg",
-                src:"https://lh3.googleusercontent.com/proxy/L7B4SpY9ADh9iFp3cPt91jIs8qxA2AdLMjuPK3EwXn59nE-M0nva55NrICAg81tcZxfPgrM8BS902dms53hrVt3h0VwDBwy4U4MxwA8Myw2C12rBPRUa0Bb4sNXz3kTbliHf0glbbwKHcMQq",
+                src:"./assets/images/YaserAvatar.png",
                 name:"Yaser.A",
                 desc:"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text.",
                 class:"memberBgLeft",

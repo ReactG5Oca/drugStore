@@ -1,6 +1,10 @@
 @import url(https://fonts.googleapis.com/css?family=Lato:400,700);
 
-
+.testimonialsTitle{
+  margin: 10vh auto 5vh;
+  text-align: center;
+  
+}
  *:before, *:after {
   box-sizing: border-box;
 }

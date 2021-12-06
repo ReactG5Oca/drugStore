@@ -27,7 +27,7 @@ export default class Checkout extends Component {
             this.setState({msgErr:""})
         }
             if(this.state.phone.length!==9){
-            this.setState({msgErr2:"Phone Number should be less than 10 digits"})
+            this.setState({msgErr2:"Phone Number should be 10 digits"})
             i++
         }
          if(this.state.phone.length===9){
