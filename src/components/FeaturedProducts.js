@@ -13,35 +13,35 @@ class FeaturedProducts extends Component {
           src: "../assets/images/panadolvapor.jpg",
           onSale: false,
           name: "Panadol Vapor Release",
-          description: "Lorem ipsum dolor sit amet consectetur adipisicingl",
+          description: "Headache, Colds & Influenza",
           quantity: 1,
-          price: "20",
+          price: "3.45",
         },
         {
           id: "13",
           src: "../assets/images/panadoljoint.jpg",
           onSale: false,
           name: "Panadol Joint",
-          description: "Lorem ipsum dolor sit amet consectetur adipisicingl",
+          description: "Headache  & Joint Pain",
           quantity: 1,
-          price: "20",
+          price: "2.18",
         },
         {
           id: "14",
           src: "../assets/images/PanadolColdandflu.png",
           onSale: false,
           name: "Panadol Cold&Flu",
-          description: "Lorem ipsum dolor sit amet consectetur adipisicingl",
+          description: "Headache, Colds & Influenza",
           quantity: 1,
-          price: "20",
+          price: "2.75",
         },
       ],
     };
 
-    this.Element = this.state.ArrProducts.map(function (element,index) {
+    this.Element = this.state.ArrProducts.map(function (element, index) {
       return (
         <Card
-        key={index}
+          key={index}
           id={element.id}
           src={element.src}
           title={element.name}
