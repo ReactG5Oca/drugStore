@@ -1,0 +1,74 @@
+.meetTeamCont{
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(2,30%);
+    align-content: space-around;
+    justify-content: center;
+    align-items: stretch;
+}
+.teamCont{
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    justify-content: center;
+    width: 70%;
+    margin: 1em auto;
+    background-color: white;
+    box-shadow: 1px 1px 8px grey;
+    border-radius: 1em 5em 1em 5em;
+}
+.teamContLeft{
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    /* justify-content: center; */
+    width: 70%;
+    margin: 1em auto;
+    background-color: white;
+    box-shadow: 1px 1px 8px grey;
+    border-radius: 5em 1em 5em 1em;
+}
+
+.memberBg{
+    border-radius: 1em 5em 0em 5em;
+    /* width: 20%;     */
+    height:min-content;
+}
+.memberBgLeft{
+    border-radius: 5em 1em 5em 0em;
+    height:min-content;
+}
+.teamMemberImg{
+    position: relative;
+    top: -5em;
+    width: 50%;
+    margin: 0 auto;
+}
+.memberName{
+    color: darkblue;
+    margin: 0 auto;
+    position: relative;
+    top: -4em;
+    padding: 0 1em;
+}
+
+ @media screen and (max-width:1000px) {
+.meetTeamCont{
+    grid-template-columns: repeat(2,40%);
+}
+}
+@media screen and (max-width:660px) {
+    .meetTeamCont{
+        grid-template-columns: repeat(1,75%);
+    }
+    .teamCont,.teamContLeft{
+        width: 80%;
+        font-size: 15px;
+    }
+    }
+@media screen and (max-width:480px) {
+    .teamCont,.teamContLeft{
+        width: 90%;
+        font-size: 15px;
+    }
+}
