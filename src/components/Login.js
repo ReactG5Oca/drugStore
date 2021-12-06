@@ -89,7 +89,7 @@ class Login extends Component {
     return (
       <div className="login">
         <form className="form-container" onSubmit={this.loginsubmit}>
-          <h1 style={{ fontFamily: "sans-serif" }}>Sign In</h1>
+          <h1 style={{ fontFamily: "sans-serif" ,color:"white"}}>Sign In</h1><br/>
           <h5 style={{ color: "red" }}>{this.state.errorMessage}</h5>
           <input type="email" placeholder="Email" name="userEmail" required />
           <br />
@@ -100,7 +100,8 @@ class Login extends Component {
             required
           />
           <br />
-          <Link to="/register"> You Don't Have An Account ?</Link>
+          <Link to="/register" style={{color:"lightblue"}}> You Don't Have An Account ?</Link>
+          <br/>
           <button type="submit" style={{ color: "white" }}>
             login
           </button>
