@@ -25,5 +25,3 @@ class CheckoutPage extends Component {
     );
   }
 }
-
-// export default CheckoutPage

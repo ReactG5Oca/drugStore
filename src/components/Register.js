@@ -1,14 +1,9 @@
-import React, { Component, useEffect } from "react";
+import React, { Component } from "react";
 import "../style/Register.css";
 import { Link, useNavigate } from "react-router-dom";
 
 export default function NewRegister() {
   const navigate = useNavigate();
-  // useEffect(() => {
-  //   if (true) {
-  //     navigate("/login");
-  //   }
-  // }, []);
   const handleUserRegister = () => {
     navigate("/login");
   };
@@ -57,7 +52,7 @@ class Register extends Component {
       });
       enableRegister += 1;
     }
-    if (input3 != input4) {
+    if (input3 !== input4) {
       this.setState({
         mssgpas: "your passwords doesn't match",
       });
@@ -72,7 +67,6 @@ class Register extends Component {
       }
     });
     if (enableRegister === 0) {
-      console.log("you can register now");
       let newArr = this.state.arr;
       newArr.push({
         username: input1,
@@ -120,5 +114,3 @@ class Register extends Component {
     );
   }
 }
-
-// export default Register;

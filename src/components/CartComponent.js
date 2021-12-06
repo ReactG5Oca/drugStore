@@ -19,7 +19,6 @@ export class CartComponent extends Component {
     await this.setState({
       cartItems: receivedItems,
     });
-    console.log(this.state.cartItems);
     this.calculateTotalPrice();
   }
   handleIncreaseQuantity = async (index) => {

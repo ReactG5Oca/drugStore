@@ -4,6 +4,5 @@
 @media only screen and (max-width: 800px) {
   .youtubeApi {
     grid-template-columns: auto auto;
-    /* width: "600vw"; */
   }
 }

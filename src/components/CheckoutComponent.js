@@ -53,11 +53,9 @@ export default class Checkout extends Component {
       let totalAmount = 0;
       data.forEach((element) => {
         totalAmount += Number(element.price) * element.quantity;
-        console.log(totalAmount);
       });
       return totalAmount;
     };
-    console.log(data);
     let values = data.map((item, index) => (
       <BillCards
         price={Number(item.price) * item.quantity}

@@ -60,7 +60,6 @@ class FeaturedProducts extends Component {
           <h3>Featured Products</h3>
         </div>
         <div className="FeaturedProducts">{this.Element}</div>
-        {/* <AddToCart itemId={this.props.id} /> */}
       </div>
     );
   }

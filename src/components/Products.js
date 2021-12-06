@@ -12,7 +12,7 @@ class Products extends Component {
   }
   render() {
     const Supplements = localStorage.getItem("itemVariables")
-      ? JSON.parse(localStorage.getItem("itemVariables")).length==15? JSON.parse(localStorage.getItem("itemVariables")):JSON.parse(localStorage.getItem("itemVariables1"))
+      ? JSON.parse(localStorage.getItem("itemVariables")).length===15? JSON.parse(localStorage.getItem("itemVariables")):JSON.parse(localStorage.getItem("itemVariables1"))
       : [];
     const filterChange = (e) => {
       let filterValue = e.target.value.toLowerCase();
@@ -31,7 +31,7 @@ class Products extends Component {
             id="filterItem"
             onChange={filterChange}
           />
-          <i class="fas fa-search"></i>
+          <i className="fas fa-search"></i>
         </div>
 
 

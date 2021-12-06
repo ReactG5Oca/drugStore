@@ -3,8 +3,6 @@
   min-height: 80vh;
   background-size: cover;
   display: flex;
-  /* align-content: center; */
-  /* justify-content: flex-start; */
   align-items: center;
 }
 

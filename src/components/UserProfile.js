@@ -23,8 +23,6 @@ class UserProfile extends Component {
           <div className="information-containerUser">
             <h3>Personal information</h3>
             <p>First Name :{users.username} </p>
-            {/* <p>Last Name:edinat </p>
-            <p>Phone number:088888888888</p> */}
             <p>Email:{users.email}</p>
           </div>
         </div>

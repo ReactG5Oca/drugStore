@@ -2,8 +2,6 @@ import { Component } from "react";
 
 export default class BillCards extends Component {
     render(){
-        // let total=0;
-        // total+=this.props.price
         return(
     <span>
     <span  className="billProducts">

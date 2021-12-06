@@ -3,7 +3,6 @@ import "../style/Testimonials.css";
 import Person from "./Person";
 export default class Testimonials extends Component {
   star = () => {
-    let index1 = 0;
     if ("") {
       return [
         <img
@@ -35,7 +34,6 @@ export default class Testimonials extends Component {
         name: "A.Shatnawi",
         msg: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text.",
         avatar: "https://img.icons8.com/color/170/000000/doctor-male--v1.png",
-        // rate:"<img alt=\"star1\" src=\"https://img.icons8.com/fluency/30/ffffff/star.png\"/>",
         class: "message other-messageLeft float-right",
       },
       {
@@ -43,7 +41,6 @@ export default class Testimonials extends Component {
         msg: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text.",
         avatar:
           "https://img.icons8.com/color/170/000000/scientist-woman-skin-type-2.png",
-        // rate:"<img alt=\"star1\" src=\"https://img.icons8.com/fluency/30/ffffff/star.png\"/>",
         class: "message other-message float-right",
       },
     ];

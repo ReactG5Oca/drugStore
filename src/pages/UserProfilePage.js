@@ -23,5 +23,3 @@ export class UserProfilePage extends Component {
     );
   }
 }
-
-// export default UserProfilePage

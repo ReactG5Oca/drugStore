@@ -46,7 +46,6 @@ export class HeroImage extends Component {
           this.setState({
             currentImgLink: this.state.arrayOfImages[0],
           });
-
       }
   }
 
