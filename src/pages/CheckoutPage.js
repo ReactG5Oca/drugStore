@@ -1,7 +1,9 @@
 import React, { Component, useEffect } from "react";
 import CheckoutComponent from "../components/CheckoutComponent";
 import { useNavigate } from "react-router-dom";
-import "../style/checkout.css"
+import Nav from "../components/Nav";
+
+import "../style/checkout.css";
 export default function NewCheckout() {
   const navigate = useNavigate();
   useEffect(() => {
@@ -14,8 +16,11 @@ export default function NewCheckout() {
 class CheckoutPage extends Component {
   render() {
     return (
-      <div className="checkoutPageContainer">
-        <CheckoutComponent />
+      <div>
+        <Nav />
+        <div className="checkoutPageContainer">
+          <CheckoutComponent />
+        </div>
       </div>
     );
   }

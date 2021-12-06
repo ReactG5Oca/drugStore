@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "../style/App.css";
-import Nav from "../components/Nav";
 import Footer from "../components/Footer";
 import LandingPage from "../pages/LandingPage";
 import LoginPage from "../pages/LoginPage";
@@ -19,7 +18,6 @@ export class App extends Component {
       <div>
         <BrowserRouter>
           <InitializeItem />
-          <Nav />
           <Routes>
             <Route path="/" element={<LandingPage />} />
             <Route path="/login" element={<LoginPage />} />

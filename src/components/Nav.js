@@ -1,8 +1,18 @@
 import React, { Component } from "react";
 import "../style/nav.css";
-import { NavLink } from "react-router-dom";
+import { NavLink,useNavigate } from "react-router-dom";
 
-export class Nav extends Component {
+export default function HandleLogout(){
+  let navigate=useNavigate();
+  const handleLogoutClick=()=>{
+    localStorage.removeItem("currentUser");
+    localStorage.setItem("cartKey",JSON.stringify([]));
+    navigate("/")
+  }
+  return <Nav handleLogoutClick={handleLogoutClick}/>
+}
+
+class Nav extends Component {
   state = {
     src1: "../assets/images/logoImg.png",
     status: 0,
@@ -30,8 +40,7 @@ export class Nav extends Component {
     }
   };
   logOut = () => {
-    localStorage.removeItem("currentUser");
-    localStorage.setItem("cartKey",JSON.stringify([]));
+    this.props.handleLogoutClick();
   };
   render() {
     return (
@@ -117,4 +126,3 @@ export class Nav extends Component {
   }
 }
 
-export default Nav;
