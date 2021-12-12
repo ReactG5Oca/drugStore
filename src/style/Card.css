@@ -104,7 +104,7 @@ div .card-title {
   justify-content: center;
   padding: 0.5em;
   background: #007991;
-  background: -webkit-linear-gradient(to bottom, #78ffd6, #007991);
+  /* background: -webkit-linear-gradient(to bottom, #78ffd6, #007991); */
   background: linear-gradient(to bottom, #a7c6bc00, #9ebdc4);
-  background: -webkit-linear-gradient(to bottom, #4ca1af, #2c3e50);
+  /* background: -webkit-linear-gradient(to bottom, #4ca1af, #2c3e50); */
 }

@@ -7,11 +7,11 @@ export class HeroImage extends Component {
     super(props);
     this.state = {
       arrayOfImages: [
-        "http://alhakeemjds.com/wp-content/uploads/2020/01/continous-manufacturing.jpg",
-        "http://alhakeemjds.com/wp-content/uploads/2020/02/footer.jpg",
+        "siderFirstImage.jpg",
+        "sliderSecondImage.jpg",
       ],
       currentImgLink:
-        "http://alhakeemjds.com/wp-content/uploads/2020/01/continous-manufacturing.jpg",
+        "siderFirstImage.jpg",
       imgArrCounter:0
     };
   }
@@ -53,7 +53,7 @@ export class HeroImage extends Component {
     return (
       <div
         className="heroImageContainer"
-        style={{ backgroundImage: `url(${this.state.currentImgLink})` }}
+        style={{ backgroundImage: `url(./assets/images/${this.state.currentImgLink})` }}
       >
         <div className="buttonsArea">
           <p> Welcome to Capsule drug stores</p>
