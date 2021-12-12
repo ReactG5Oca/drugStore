@@ -25,7 +25,19 @@ export class ChoosenItem extends Component {
             +
           </button>
         </div>
-        <div className="itemPrice">{Math.round(this.props.itemPriceQuantity*100)/100} Jd</div>
+        <div className="itemPrice">
+          {Math.round(this.props.itemPriceQuantity * 100) / 100} Jd
+        </div>
+
+        <div
+          class="delete"
+          onClick={() => {
+            this.props.handleDeleteItem(this.props.itemIndex);
+          }}
+        >
+          {" "}
+          <i class="far fa-trash-alt"></i>
+        </div>
       </div>
     );
   }
