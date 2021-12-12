@@ -24,12 +24,14 @@ class Products extends Component {
 
 
 <div className="filterInput">
-          <div>Search: </div>
+          <div></div>
           <input
             type="text"
             className="filter"
             id="filterItem"
+            placeholder="Search.."
             onChange={filterChange}
+            
           />
           <i className="fas fa-search"></i>
         </div>
