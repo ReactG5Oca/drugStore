@@ -21,7 +21,8 @@ class Nav extends Component {
     class3: "Nav btns",
     class4: "Nav middleList",
     class5: "Nav rightList",
-    class6:"Nav dropIcon"
+    class6:"Nav dropIcon",
+    class7:"Nav profileDropList"
   };
   menu = () => {
     if (
@@ -35,7 +36,8 @@ class Nav extends Component {
         class3: "toggle btns",
         class4: "toggle itemList",
         class5: "toggle itemList",
-        class6 :"toggle dropIcon"
+        class6 :"toggle dropIcon",
+        class7:"toggle profileDropList"
       });
     } else {
       this.setState({
@@ -44,7 +46,8 @@ class Nav extends Component {
         class3: "Nav btns",
         class4: "Nav middleList",
         class5: "Nav rightList",
-        class6:"Nav dropIcon"
+        class6:"Nav dropIcon",
+        class7:"Nav profileDropList"
 
       });
     }
@@ -102,7 +105,7 @@ class Nav extends Component {
                     /> 
                     <img src="https://img.icons8.com/external-those-icons-fill-those-icons/24/4a90e2/external-down-arrows-those-icons-fill-those-icons-7.png" alt="drop down" onMouseEnter={this.dropdown}/> 
                     <br/>
-                <div className="Nav profileDropList">
+                <div className={this.state.class7}>
                   <NavLink to="/profile">
                   <li className={this.state.class1}>
                     View Profile <br/>
