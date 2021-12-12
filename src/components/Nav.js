@@ -19,6 +19,9 @@ class Nav extends Component {
     class1: "Nav itemList",
     class2: "Nav navList",
     class3: "Nav btns",
+    class4: "Nav middleList",
+    class5: "Nav rightList",
+    class6:"Nav dropIcon"
   };
   menu = () => {
     if (
@@ -30,12 +33,19 @@ class Nav extends Component {
         class1: "toggle itemList",
         class2: "toggle navList",
         class3: "toggle btns",
+        class4: "toggle itemList",
+        class5: "toggle itemList",
+        class6 :"toggle dropIcon"
       });
     } else {
       this.setState({
         class1: "Nav itemList",
         class2: "Nav navList",
         class3: "Nav btns",
+        class4: "Nav middleList",
+        class5: "Nav rightList",
+        class6:"Nav dropIcon"
+
       });
     }
   };
@@ -62,6 +72,7 @@ class Nav extends Component {
           <div className="Nav logoName">Capsule</div>
         </div>
         <ul className={this.state.class2}>
+        <div className={this.state.class4}>
           <li className={this.state.class1}>
             <NavLink to="/">Home</NavLink>
           </li>
@@ -71,34 +82,42 @@ class Nav extends Component {
           <li className={this.state.class1}>
             <NavLink to="/aboutus">About Us</NavLink>
           </li>
+          </div>
           <span className={this.state.class3}>
             {localStorage.getItem("currentUser") !== null ? (
-              <>
-                <NavLink to="/profile">
+              <div className={this.state.class5}>
                   {" "}
-                  <div className={this.state.class1}>
-                    <img
-                      alt="profile icon"
-                      src="https://img.icons8.com/color/45/000000/test-account.png"
-                    />
-                  </div>
-                </NavLink>
                 <NavLink to="/cart">
                   <li className={this.state.class1}>
                     <img
                       alt="cart icon"
                       src="https://img.icons8.com/ios/45/4a90e2/shopping-cart.png"
-                    />
+                      />
                   </li>
                 </NavLink>
+                    <img
+                      alt="profile icon"
+                      src="https://img.icons8.com/color/45/000000/test-account.png"
+                    /> 
+                    <div className={this.state.class6}>
+                    <img src="https://img.icons8.com/external-those-icons-fill-those-icons/24/4a90e2/external-down-arrows-those-icons-fill-those-icons-7.png" alt="drop down" onMouseEnter={this.dropdown}/> 
+                    <br/>
+                <div className="Nav profileDropList">
+                  <NavLink to="/profile">
+                  <li className={this.state.class1}>
+                    View Profile <br/>
+                  </li>
+                      </NavLink>
                 <li className={this.state.class1}>
                   <button className="Nav btn" onClick={this.logOut}>
-                    Log Out
+                    Log Out <br/>
                   </button>
                 </li>
-              </>
+                </div>
+              </div>
+              </div>
             ) : (
-              <>
+              <div>
                 <NavLink to="/cart">
                   <li className={this.state.class1}>
                     <img
@@ -117,7 +136,7 @@ class Nav extends Component {
                     <NavLink to="/register">Register</NavLink>
                   </button>
                 </li>
-              </>
+              </div>
             )}
           </span>
         </ul>
