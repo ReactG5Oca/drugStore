@@ -95,11 +95,11 @@ class Nav extends Component {
                       />
                   </li>
                 </NavLink>
+                    <div className={this.state.class6}>
                     <img
                       alt="profile icon"
                       src="https://img.icons8.com/color/45/000000/test-account.png"
                     /> 
-                    <div className={this.state.class6}>
                     <img src="https://img.icons8.com/external-those-icons-fill-those-icons/24/4a90e2/external-down-arrows-those-icons-fill-those-icons-7.png" alt="drop down" onMouseEnter={this.dropdown}/> 
                     <br/>
                 <div className="Nav profileDropList">
