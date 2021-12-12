@@ -1,16 +1,18 @@
 
 .login {
-  height: 70vh;
+  margin: 1.5em 0em;
   display: flex;
   justify-content: center;
   align-items: center;
+  padding-bottom: 4.2em;
 }
 .form-container {
   display: flex;
   flex-direction: column;
-  height: 78%;
+  /* gap: .3em; */
+  /* height: 78%; */
   width: 33%;
-  padding: .7em;
+  padding: .8em;
   border-radius: 1em;
   background-color: var(--darkBlue);
   justify-content: center;
@@ -31,6 +33,7 @@ div.login > form >input {
 div.login > form > button {
   height: 3.2em;
   width: 23em;
+  margin-bottom: .8em;
   border-radius: 5px;
   background-color: var(--skyBlue);
   border-color: var(--skyBlue);

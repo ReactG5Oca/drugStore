@@ -1,5 +1,5 @@
 .register {
-  height: 80vh;
+  height: 75vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -7,9 +7,9 @@
 .form1-container {
   display: flex;
   flex-direction: column;
-  height: 94%;
+  gap: .7em;
   width: 33%;
-  padding: 1em;
+  padding: 1.2em 0em;
   border-radius: 20px;
   background-color: var(--darkBlue);
   justify-content: center;
@@ -29,6 +29,7 @@ div.register > form >input {
 div.register > form > button {
   height: 3.2em;
   width: 23em;
+  margin-bottom: .2em;
   border-radius: 5px;
   background-color: var(--skyBlue);
   border-color: var(--skyBlue);
@@ -37,7 +38,6 @@ div.register > form > button {
 @media only screen and (max-width: 1240px) and (min-width: 780px) {
   .form1-container {
     width: 40%;
-    padding: 0.5em;
   }
   div.register > form >input {
     height: 3em;

@@ -84,25 +84,23 @@ class Register extends Component {
       <div className="register">
         <form className="form1-container" onSubmit={this.check}>
           <h2 style={{ fontFamily: "sans-serif" , color:"white"}}>Sign Up</h2>
-          <br />
+          
           <input type="text" placeholder="UserName" name="name" required />
-          <h6 style={{ color: "red" }}>{this.state.mssgname}</h6>
-          <br />
+          <span style={{ color: "red"}}>{this.state.mssgname}</span>
+          
           <input type="email" placeholder="Email" name="email" required />
-          <h6 style={{ color: "red" }}>{this.state.mssgEmail}</h6>
-          <br />
-
+          <span style={{ color: "red" }}>{this.state.mssgEmail}</span>
+          
           <input type="password" placeholder="Password" name="password" required />
-          <h6 style={{ color: "red" }}>{this.state.mssglength}</h6>
-          <br />
-
+          <span style={{ color: "red" }}>{this.state.mssglength}</span>
+          
           <input
             type="password"
             placeholder="ConfirmPass"
             name="confirmpass"
             required
           />
-          <h6 style={{ color: "red" }}>{this.state.mssgpas}</h6>
+          <span style={{ color: "red" }}>{this.state.mssgpas}</span>
           
           <Link to="/login" style={{color:"lightblue"}}> You Have An Account ?</Link>
         {/* <br/> */}
