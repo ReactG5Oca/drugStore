@@ -53,6 +53,19 @@ export class CartComponent extends Component {
       this.calculateTotalPrice();
     }
   };
+
+  // delete item.......................
+  handleDeleteItem = async (index) => {
+    let prevStorageData = this.state.cartItems;
+    prevStorageData.splice(index, 1);
+    this.setState({
+      cartItems: prevStorageData,
+    });
+    localStorage.setItem("cartKey", JSON.stringify(this.state.cartItems));
+    this.calculateTotalPrice();
+  };
+  // ..................................
+
   calculateTotalPrice = async () => {
     let sum = 0;
     this.state.cartItems.forEach((data) => (sum += data.price * data.quantity));
@@ -88,13 +101,18 @@ export class CartComponent extends Component {
                   itemPriceQuantity={data.price * data.quantity}
                   handleIncreaseQuantity={this.handleIncreaseQuantity}
                   handleDecreaseQuantity={this.handleDecreaseQuantity}
+                  handleDeleteItem={this.handleDeleteItem}
                 />
               ))}
               <h4 className="totalPriceResulth4">
-                Total Price : {Math.round(this.state.totalItemsPrice*100)/100} Jd
+                Total Price :{" "}
+                {Math.round(this.state.totalItemsPrice * 100) / 100} Jd
               </h4>
               <button className="checkoutBtn" onClick={this.saveCartToStorage}>
                 <Link to="/checkout"> Checkout</Link>
+              </button>
+              <button className="addItemBtncart">
+                <Link to="/store"> Add Item</Link>
               </button>
             </>
           ) : (

@@ -6,19 +6,20 @@
 .CheckoutPageContainer .CheckoutPageTitle{
     font-weight: 900;
 }
-.choosenIemsContainer .checkoutBtn{
+.choosenIemsContainer .checkoutBtn,.choosenIemsContainer .addItemBtncart{
     border: none;
     background-color: var(--darkBlue);
     padding: 10px 20px;
     border-radius: 25px;
     color: var(--white);
     font-weight: 800;
+    margin: 0 0.5em ;
 }
-.choosenIemsContainer .checkoutBtn a{
+.choosenIemsContainer .checkoutBtn a ,.choosenIemsContainer .addItemBtncart a{
     text-decoration: none;
     color: unset;
 }
-.choosenIemsContainer .checkoutBtn:hover{
+.choosenIemsContainer .checkoutBtn:hover,.choosenIemsContainer .addItemBtncart:hover{
     background-color: var(--skyBlue);
     
 }
