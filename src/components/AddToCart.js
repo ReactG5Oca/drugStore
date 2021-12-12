@@ -6,8 +6,11 @@ export class AddToCart extends Component {
     super(props);
     this.state = {
       open: false,
+      vertical: "top",
+      horizontal: "right",
     };
   }
+  
   onClickHandler = () => {
     const cartArray = localStorage.getItem("cartKey")
       ? JSON.parse(localStorage.getItem("cartKey"))
@@ -33,6 +36,7 @@ export class AddToCart extends Component {
     this.setState((state) => ({ open: false }));
   };
   render() {
+    const { vertical, horizontal } = this.state;
     return (
       <>
         <button className="add-to-cart-btn" onClick={this.onClickHandler}>
@@ -45,6 +49,8 @@ export class AddToCart extends Component {
           open={this.state.open}
           autoHideDuration={3000}
           onClose={this.handleClose}
+          anchorOrigin={{ vertical, horizontal }}
+          key={vertical + horizontal}
         >
           <Alert
             onClose={this.handleClose}

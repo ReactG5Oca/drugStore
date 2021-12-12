@@ -31,12 +31,12 @@ export class ChoosenItem extends Component {
 
         <div
           class="delete"
-          onClick={() => {
-            this.props.handleDeleteItem(this.props.itemIndex);
-          }}
+          
         >
           {" "}
-          <i class="far fa-trash-alt"></i>
+          <i class="far fa-trash-alt" onClick={() => {
+            this.props.handleDeleteItem(this.props.itemIndex);
+          }}></i>
         </div>
       </div>
     );
