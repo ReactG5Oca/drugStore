@@ -1,10 +1,10 @@
 .filterInput {
   display: flex;
-  gap: 1em;
   align-items: center;
   margin: 2em;
   position: relative;
   width: 35%;
+  margin: 3em auto 2em auto;
 }
 
 input#filterItem {
@@ -18,8 +18,16 @@ input#filterItem {
   position: absolute;
   right: 1em;
 }
-@media only screen and (max-width: 780px) {
+
+
+@media only screen and (max-width: 900px) {
+  .filterInput {
+    width: 65%;
+  }
+}
+
+@media only screen and (max-width: 450px) {
   .filterInput {
     width: 80%;
   }
-}
+} 
