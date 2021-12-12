@@ -6,7 +6,7 @@ export class AddToCart extends Component {
     super(props);
     this.state = {
       open: false,
-      vertical: "top",
+      vertical: "bottom",
       horizontal: "right",
     };
   }
